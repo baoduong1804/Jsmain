@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #f1f1f1;
+        min-height: 100vh;
+        }
+       .form{
+        display:flex;
+        flex-direction: column;
+        width: 300px;
+        height: 220px;
+        text-align: center;
+        background: rgba(135, 207, 235, 0.87);
+        padding:20px 20px;
+       }
+       .lable{
+        font-weight: 700;
+        color: red;
+        text-align: left;
+        margin-top:20px;
+       }
+       .input{
+        margin:20px 50px;
+        outline: none;
+        border: none;
+        border-radius: 3px;
+        border: 1px solid #b3b3b3;
+       }
+       .input:hover {
+        border-color: #1c0df1;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+    <div class="form">
+    <h2>Máy tính tuổi thông minh </h2>
+    <lable class="lable">Nhập tuổi của bạn:</lable>
+    <input class="input">
+    <span class="span"></span>
+    </div>
+    </div>
+    <script>
+        var inputElement= document.querySelector('.input');
+        
+        inputElement.onchange =function(e){
+            var numValue = e.target.value;
+            function checkNumbers(key){
+            for(var i=-1;i<=100;i++){
+                if(Number(numValue) === i){
+                    return true
+                    break;
+                } 
+            }
+        }
+            var numTrue= checkNumbers(numValue);
+            console.log(numTrue)
+            if(numTrue){
+            document.querySelector('.span').innerText= `Tuổi của bạn là: ${numValue}`;
+            } else{
+                document.querySelector('.span').innerText= 'Ngu';
+            }
+        }
+    </script>
+</body>
+</html>
