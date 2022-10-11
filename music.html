@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href ="music.css">
+</head>
+<body>
+    <div class="music">
+        <div class="music-thumb">
+            <img src ="https://assets.rebelmouse.io/eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpbWFnZSI6Imh0dHBzOi8vYXNzZXRzLnJibC5tcy8zMTg4MTU0OC9vcmlnaW4uanBnIiwiZXhwaXJlc19hdCI6MTY5NDE3MzczMH0.RlVyiMYVk5LUQ5pCCFxEDS7f9ukEYhob4RYjUEXNH5c/img.jpg?width=980">
+        </div>
+        <h3 class="music-name">Some thing just like it</h3>
+        <input type="range" name="range" class="range" id="range">
+        <audio src="music/saveMe.mp3" id="song"></audio>
+        <div class="timer">
+            <div class="duration">2:10</div>
+            <div class="remaining">3:10</div>
+        </div>
+        <div class="key">
+        <div class="controls">
+            <ion-icon name="infinite-outline" class="play-infinite"></ion-icon>
+            <ion-icon name="play-back" class="play-back"></ion-icon>
+        </div>
+        <div class="play">
+            <div class="player-inner">
+                <ion-icon name="play" class="play-icon"></ion-icon>
+            </div>
+        </div>
+        <div class="controls">
+            <ion-icon name="play-forward" class="play-forward"></ion-icon>
+            <ion-icon name="repeat-outline" class="play-repeat"></ion-icon>
+        </div>
+    </div>
+
+    </div>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <script src="music.js"></script>
+</body>
+</html>
