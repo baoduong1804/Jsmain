@@ -1,28 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins&display=swap');
 *{
     margin:0;
     padding:0;
     box-sizing: border-box;
+    
 }
 body{
-    font-family: "Poppins", sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     padding: 20px;
+    font-family: 'Dancing Script', cursive;
+    /* font-family: 'Poppins', sans-serif; */
+    background-size: cover;
+    backdrop-filter:blur(5px);
 }
 .music{
+    position: relative;
     width: 400px;
     margin: 0 auto;
     border-radius: 12px;
-    background-color: white;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    background-color: rgba(255, 255, 255, 0.096);
+    box-shadow: rgba(100, 100, 111, 0.5) 0px 4px 6px ;
     padding: 35px 15px 30px;
+}
+.change-bg-img{
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    background: skyblue;
+    box-shadow: 1px 1px 1px rgb(26, 80, 116);
+    border-radius: 50%;
+    left:90%;
+    top:20px;
+}
+.change-bg-white{
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    left:82%;
+    top:20px;
+    background: pink;
+    box-shadow: 1px 1px 1px rgb(192, 51, 169);
+}
+.change-bg-img:hover,.change-bg-white:hover{
+    transform: scale(1.1);
 }
 .music-thumb {
     width: 100px;
     height: 100px;
     margin: 0 auto 25px;
+}
+.music-thumb.isplaying {
+    animation: animate linear 5s infinite;
 }
 .music-thumb img {
     width: 100%;
@@ -30,21 +62,21 @@ body{
     object-fit: cover;
     border-radius: 50%;
     box-shadow: 0 0 0 3px #ffb86c, 0 0 0 6px white, 0 0 0 9px #ff6bcb;
-    animation: animate linear 10s infinite;
 }
 .music-name {
-    font-size: 18px;
+    font-size: 28px;
     font-weight: 500;
     text-align: center;
     margin-bottom: 20px;
+    color:rgb(14, 146, 212);
 }
 .timer {
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-size: 14px;
-    color: #999;
     margin-bottom: 40px;
+    color:#f01c98;
 }
 .key{
     display: flex;
@@ -71,7 +103,7 @@ body{
 .player-inner{
     display: flex;
     justify-content: center;
-    margin-left:2px;
+    margin-left:1px;
 }
 .play-back,
 .play,
@@ -80,8 +112,8 @@ body{
   cursor: pointer;
 }
 .play:hover,.play-back:hover,.play-forward:hover{
-    transform: scale(1.1);
-    transition: 0.2s;
+    transform: scale(1.05);
+    
 }
 .range{
     -webkit-appearance: none;
@@ -101,11 +133,14 @@ body{
     margin-top: -7px;
     box-shadow: 0 0 0 3px white, 0 0 0 6px rgba(100, 100, 111, 0.05);
 }
+.range::-webkit-slider-thumb:hover{
+    transform: scale(1.3);
+}
 @keyframes animate {
-    0%{
-        transform: rotate(0deg);
-    }
-    100%{
+    to{
         transform: rotate(360deg);
     }
+}
+.play-back:hover,.play-forward:hover{
+    transform: scale(1.3);
 }
