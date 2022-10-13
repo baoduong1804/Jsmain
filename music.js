@@ -15,27 +15,45 @@ const body = document.querySelector('body');
 const musics =[
     {
         id:1,
-        title:'Save Me',
-        file:'saveMe.mp3',
-        image:'https://wikikienthuc.com/wp-content/uploads/2019/11/dich-loi-bai-save-me-deamn.jpg'
-    },
-    {
-        id:2,
         title:'Holo',
         file:'holo.mp3',
         image:'https://d34ojwe46rt1wp.cloudfront.net/wp-content/uploads/2020/04/san-holo.jpg'
-    },
-    {
-        id:3,
-        title:'Spark',
-        file:'spark.mp3',
-        image:'https://images.squarespace-cdn.com/content/v1/5b33cce0cef3725c510dd56f/1613100826972-R35HWBYS3QSLCLRDSOH9/Spark+Logo_Door_03.jpg'
     },
     {
         id:2,
         title:'Summer',
         file:'summer.mp3',
         image:'https://i.ytimg.com/vi/4loUFomAgck/maxresdefault.jpg'
+    },
+    {
+        id:3,
+        title:'Tình yêu ngủ quên',
+        file:'Tinh-Yeu-Ngu-Quen.mp3',
+        image:'https://i.ytimg.com/vi/eukA1NGSM5w/maxresdefault.jpg'
+    },
+    {
+        id:4,
+        title:'Gác lại Âu lo',
+        file:'Gac-Lai-Au-Lo.mp3',
+        image:'https://photo-cms-tpo.zadn.vn/600x315/Uploaded/2022/qqc_wqdun/2020_07_23/da_lab_miu_le_CQBP.png'
+    },
+    {
+        id:5,
+        title:'Có hẹn với thanh xuân',
+        file:'co-hen-voi-thanh-xuan.mp3',
+        image:'https://i.ytimg.com/vi/bR38ZicMZWg/maxresdefault.jpg'
+    },
+    {
+        id:6,
+        title:'Anh luôn là lý do',
+        file:'Anh-Luon-La-Ly-Do.mp3',
+        image:'https://i.ytimg.com/vi/1PQU1n6nMq8/maxresdefault.jpg'
+    },
+    {
+        id:7,
+        title:'Bỏ em vào Balo',
+        file:'Bo-Em-Vao-Balo.mp3',
+        image:'https://i.ytimg.com/vi/FW5aNm9cx9A/maxresdefault.jpg'
     }
 ]
 let isPlaying =true;
@@ -82,6 +100,9 @@ prevBtn.onclick = function(){
 //Qua bài mới khi kết thúc
 song.onended = function(){
     ++indexMusic;
+    if(indexMusic==musics.length){
+        indexMusic=0;
+    }
     init(indexMusic);
 }
 //Xử lý thời gian nhạc
@@ -113,7 +134,6 @@ function init(indexMusic){
     musicName.textContent = musics[indexMusic].title;
     exchange();
     playPause();
-    
 }
 //Thay đổi background
 changeBg.onclick = function(){
