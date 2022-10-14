@@ -32,7 +32,7 @@ body{
     width: 18px;
     height: 18px;
     background: skyblue;
-    box-shadow: 1px 1px 1px rgb(26, 80, 116);
+    box-shadow: 1px 1px 0px rgb(26, 80, 116);
     border-radius: 50%;
     left:90%;
     top:20px;
@@ -45,7 +45,7 @@ body{
     left:82%;
     top:20px;
     background: pink;
-    box-shadow: 1px 1px 1px rgb(192, 51, 169);
+    box-shadow: 1px 1px 0px rgb(192, 51, 169);
 }
 .change-bg-img:hover,.change-bg-white:hover{
     transform: scale(1.1);
@@ -107,10 +107,10 @@ body{
     justify-content: center;
     margin-left:1px;
 }
-.play-back,
-.play,
-.play-forward,
-.range {
+.play-back,.play,
+.play-forward,.range,
+.play-infinite,.play-repeat,
+.change-bg-white,.change-bg-img{
   cursor: pointer;
 }
 .play:hover,.play-back:hover,.play-forward:hover{
