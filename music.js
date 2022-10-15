@@ -8,15 +8,18 @@ const remainingTime = document.querySelector('.remaining');
 const rangeBar = document.querySelector('.range');
 const musicName = document.querySelector('.music-name');
 const musicImage = document.querySelector('.music-thumb img');
-const changeBg = document.querySelector('.change-bg-img');
-const changeBgWhite = document.querySelector('.change-bg-white');
+const changeBgImage = document.querySelector('.change-bg-img');
+const changeBgColor = document.querySelector('.change-bg-color');
 const body = document.querySelector('body');
 const infiniteBtn = document.querySelector('.play-infinite');
 const repeatBtn = document.querySelector('.play-repeat');
+const musicBox  =document.querySelector('.music');
 let isPlaying =true;
 let isRepeat = false;
 let isInfinite = false;
 var indexMusic = 0;
+let isBgImage = true;
+let isBgColor = 1;
 //List bài hát
 const musics =[
     {
@@ -39,9 +42,9 @@ const musics =[
     },
     {
         id:4,
-        title:'Holo',
-        file:'holo.mp3',
-        image:'https://d34ojwe46rt1wp.cloudfront.net/wp-content/uploads/2020/04/san-holo.jpg'
+        title:'Nụ cười em là nắng',
+        file:'Nu-Cuoi-Em-La-Nang.mp3',
+        image:'https://i.ytimg.com/vi/EsVgzTJf4TA/maxresdefault.jpg'
     },
     {
         id:5,
@@ -63,9 +66,9 @@ const musics =[
     },
     {
         id:8,
-        title:'Nụ cười em là nắng',
-        file:'Nu-Cuoi-Em-La-Nang.mp3',
-        image:'https://i.ytimg.com/vi/EsVgzTJf4TA/maxresdefault.jpg'
+        title:'Holo',
+        file:'holo.mp3',
+        image:'https://d34ojwe46rt1wp.cloudfront.net/wp-content/uploads/2020/04/san-holo.jpg'
     },
     {
         id:9,
@@ -146,7 +149,6 @@ song.onended = function(){
     if(!isRepeat){
         ++indexMusic;
     } else {
-        indexMusic;
         isRepeat= false;
         repeatBtn.removeAttribute('style');
     }
@@ -155,9 +157,8 @@ song.onended = function(){
             indexMusic=0;
     } else if(!isInfinite && indexMusic==musics.length) {
         --indexMusic;
-        playPause()
+        playPause();
     }
-    console.log(indexMusic)
     init(indexMusic);       
 }
 //Xử lý thời gian nhạc
@@ -167,7 +168,7 @@ const {duration ,currentTime} = song;
 //currentTime là thời lượng bài hát đang chạy
     rangeBar.max = duration;
     rangeBar.value = currentTime;
-    remainingTime.textContent = formatTimer(currentTime)
+    remainingTime.textContent = formatTimer(currentTime);
     durationTime.textContent = formatTimer(Math.floor(duration)-Math.floor(currentTime));
 }
 setInterval(displayTimer,300);
@@ -189,18 +190,40 @@ function init(indexMusic){
     musicName.textContent = musics[indexMusic].title;
     exchange();
     playPause();
-    console.log(indexMusic)
 }
-//Thay đổi background
-changeBg.onclick = function(){
-    body.setAttribute('background',musics[indexMusic].image);
-    changeBgWhite.removeAttribute('style');
-    changeBg.style.boxShadow = '0 0 0'
+//Thay đổi background Image
+changeBgImage.onclick = function(){
+    if(isBgImage){
+        body.setAttribute('background',musics[indexMusic].image);
+        isBgImage = false;
+    } else {
+        body.removeAttribute('background');
+        isBgImage = true;
+    }
 }
-changeBgWhite.onclick = function(){
-    body.removeAttribute('background');
-    changeBg.removeAttribute('style');
-    changeBgWhite.style.boxShadow = '0 0 0'
+//Thay đỏi background black or white or colorful
+changeBgColor.onclick = function(){
+    if(isBgColor==1){
+        changeBgColor.removeAttribute('style');
+        musicBox.classList.add('music-black');//màu đen
+        musicName.classList.add('music-name-green');
+        changeBgColor.classList.add('music-colorful');
+    } else if(isBgColor==2) {
+        changeBgColor.removeAttribute('style');
+        musicBox.classList.remove('music-black');
+        musicBox.classList.add('music-colorful');//màu colorful
+        musicName.classList.remove('music-name-green');
+        changeBgColor.style.background = 'white';
+    }else if(isBgColor==3) {
+        changeBgColor.removeAttribute('style');
+        musicBox.classList.remove('music-colorful');
+        musicName.classList.remove('music-name-green');
+        changeBgColor.style.background = '#000000a9';
+    }
+    if(isBgColor<3){
+        ++isBgColor
+    } else {
+        isBgColor =1;
+    }
 }
-changeBgWhite.style.boxShadow = '0 0 0'
 init(indexMusic)
