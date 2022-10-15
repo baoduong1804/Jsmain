@@ -66,9 +66,9 @@ const musics =[
     },
     {
         id:8,
-        title:'Holo',
-        file:'holo.mp3',
-        image:'https://d34ojwe46rt1wp.cloudfront.net/wp-content/uploads/2020/04/san-holo.jpg'
+        title:'Nắng ấm xa dần',
+        file:'Nang-Am-Xa-Dan-MTP.mp3',
+        image:'https://media.doisongvietnam.vn/u/rootimage/editor/2020/05/02/20/56/w825/max1588406160_7745.jpg'
     },
     {
         id:9,
@@ -82,8 +82,32 @@ const musics =[
         file:'Loi-Anh-Chua-The-Noi.mp3',
         image:'https://i.ytimg.com/vi/yfpiynLlcDA/maxresdefault.jpg'
         // image:'https://i.ytimg.com/vi/IagHzELYX6U/maxresdefault.jpg'
+    },
+    {
+        id:11,
+        title:'Em của ngày hôm qua',
+        file:'Em-Cua-Ngay-Hom.mp3',
+        image:'https://loretofest.org/cdn/files/loi-bai-hat-em-cua-ngay-hom-qua.jpg'
+    },
+    {
+        id:12,
+        title:'Bắt cóc con tim',
+        file:'Bat-Coc-Con-Tim.mp3',
+        image:'https://i.ytimg.com/vi/maFC91zwutc/maxresdefault.jpg'
+    },
+    {
+        id:13,
+        title:'Thằng hầu',
+        file:'Thang-Hau.mp3',
+        image:'https://i.ytimg.com/vi/Ra0Ist7dO_Y/maxresdefault.jpg'
+    },
+    {
+        id:14,
+        title:'Cơn mưa ngang qua',
+        file:'Con-Mua-Ngang-Qua.mp3',
+        image:'https://kenh14cdn.com/thumb_w/660/203336854389633024/2022/10/8/photo-1-1665216582775798055371.jpg'
     }
-]
+];
 //Hoán đổi isPlaying
 function exchange(){
     if(isPlaying){
@@ -155,7 +179,7 @@ song.onended = function(){
     // Xử lí lặp lại vô hạn music list
     if(isInfinite && indexMusic==musics.length){    
             indexMusic=0;
-    } else if(!isInfinite && indexMusic==musics.length) {
+    } else if(!isInfinite && indexMusic==musics.length){
         --indexMusic;
         playPause();
     }
@@ -226,4 +250,4 @@ changeBgColor.onclick = function(){
         isBgColor =1;
     }
 }
-init(indexMusic)
+init(indexMusic);

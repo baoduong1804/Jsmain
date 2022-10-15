@@ -437,14 +437,39 @@ console.log([...new Set(array)])
 // }
 
 ///*stopPropagation(ngăn chặn hành vi nổi bọt)
-document.querySelector('div').onclick =function(e){
-    console.log('DIV')
-}
-document.querySelector('button').onclick =function(e){
-    e.stopPropagation();//ngăn chặn hành vi nổi bọt
-    console.log('Click me!')
-}
+// document.querySelector('div').onclick =function(e){
+//     console.log('DIV')
+// }
+// document.querySelector('button').onclick =function(e){
+//     e.stopPropagation();//ngăn chặn hành vi nổi bọt
+//     console.log('Click me!')
+// }
 
-///*JSON
-JSON.stringify( );//Từ Js types -> JSON
-JSON.parse( );//Từ JSON -> Js types
+// ///*JSON
+// JSON.stringify( );//Từ Js types -> JSON
+// JSON.parse( );//Từ JSON -> Js types
+
+// //Promise
+// //1.new Promise
+// //2.Executor
+// var promise = new Promise(
+//     //Executor
+//     function(resolve,reject){
+//         //Logic
+//         //Thành công:resolve()
+//         //Thất bại: reject()
+//     }
+// );
+// promise
+//     //Khi thành công
+//     .then(function(){
+//         console.log()
+//     })
+//     //Khi thất bại
+//     .catch(function(){
+//         console.log()
+//     })
+//     //Cả khi thất bại hoặc thành công
+//     .finally(function(){
+//         console.log()
+//     })
