@@ -11,9 +11,10 @@ const musicImage = document.querySelector('.music-thumb img');
 const changeBgImage = document.querySelector('.change-bg-img');
 const changeBgColor = document.querySelector('.change-bg-color');
 const body = document.querySelector('body');
-const infiniteBtn = document.querySelector('.play-infinite');
 const repeatBtn = document.querySelector('.play-repeat');
+const shuffleBtn = document.querySelector('.play-shuffle');
 const musicBox  =document.querySelector('.music');
+// const infiniteBtn = document.querySelector('.play-infinite');
 let isPlaying =true;
 let isRepeat = false;
 let isInfinite = false;
@@ -72,9 +73,9 @@ const musics =[
     },
     {
         id:9,
-        title:'Ngày đầu tiên',
-        file:'Ngay-Dau-Tien.mp3',
-        image:'https://i.ytimg.com/vi/rIXhXaQ8tiM/maxresdefault.jpg'
+        title:'Thằng điên',
+        file:'Thang-Dien.mp3',
+        image:'https://4.bp.blogspot.com/-jVjd6ftMFHs/W-z1vN5bbpI/AAAAAAAARN0/4zRTHj5Ly_MFsfUpJKWFqhFvGkOBG_4lACLcBGAs/s1600/startuanit--thang-dien.jpg'
     },
     {
         id:10,
@@ -93,7 +94,7 @@ const musics =[
         id:12,
         title:'Bắt cóc con tim',
         file:'Bat-Coc-Con-Tim.mp3',
-        image:'https://i.ytimg.com/vi/maFC91zwutc/maxresdefault.jpg'
+        image:'https://img.theinfluencer.vn/thumbs/1200_630/uploads/2022/07/M0ZbrnkF3OR7RwfdEa4cRj4QLKKO49dCQaZZbTNx.png'
     },
     {
         id:13,
@@ -106,8 +107,30 @@ const musics =[
         title:'Cơn mưa ngang qua',
         file:'Con-Mua-Ngang-Qua.mp3',
         image:'https://kenh14cdn.com/thumb_w/660/203336854389633024/2022/10/8/photo-1-1665216582775798055371.jpg'
+    },
+    {
+        id:15,
+        title:'Yêu 5',
+        file:'Yeu-5.mp3',
+        image:'https://tainguyen24h.com/wp-content/uploads/2020/05/yeu-5-1.jpg'
+    },
+    {
+        id:16,
+        title:'Đã lỡ yêu em nhiều',
+        file:'Da-Lo-Yeu-Em-Nhieu.mp3',
+        image:'https://bdkhtravinh.vn/nguoi-yeu-oi-co-biet-em-da-yeu-anh-rat-nhieu/imager_26309.jpg'
     }
 ];
+let isShuffle =false;
+shuffleBtn.onclick =function(){
+    if(isShuffle){
+     shuffleBtn.removeAttribute('style');
+     isShuffle =false;
+    } else {
+     isShuffle =true;
+     shuffleBtn.style.color = '#008b85';
+    }
+}
 //Hoán đổi isPlaying
 function exchange(){
     if(isPlaying){
@@ -127,15 +150,15 @@ repeatBtn.onclick =function(){
     }
 }
 //Hoán đổi isInfinite,thay đổi màu khi ấn play-infinite
-infiniteBtn.onclick =function(){
-   if(isInfinite){
-    infiniteBtn.removeAttribute('style');
-    isInfinite =false;
-   } else {
-    isInfinite =true;
-    infiniteBtn.style.color = '#008b85';
-   }
-}
+// infiniteBtn.onclick =function(){
+//    if(isInfinite){
+//     infiniteBtn.removeAttribute('style');
+//     isInfinite =false;
+//    } else {
+//     isInfinite =true;
+//     infiniteBtn.style.color = '#008b85';
+//    }
+// }
 //Xử lý khi ấn nút Play
 playBtn.addEventListener('click',playPause);
 function playPause(){
@@ -169,20 +192,30 @@ prevBtn.onclick = function(){
 }
 //Qua bài mới khi kết thúc
 song.onended = function(){
-    //Xử lý repeat 1 bài 1 lần
+    var indexMusicOld =indexMusic;
     if(!isRepeat){
-        ++indexMusic;
-    } else {
+        if(isShuffle){//Phát bài ngẫu nhiên ko trùng bài trc đó
+            do{
+                indexMusic=Math.floor(Math.random()*musics.length);
+            } while (indexMusicOld==indexMusic);
+        } else {
+            ++indexMusic;
+            //Chuyển đến bài đầu tiên nếu hết bài cuối cùng
+            if(indexMusic==musics.length){
+                indexMusic=0;
+        }
+        }
+    } else {//Xử lý repeat 1 bài 1 lần(ko thay đổi indexMusic)
         isRepeat= false;
         repeatBtn.removeAttribute('style');
     }
     // Xử lí lặp lại vô hạn music list
-    if(isInfinite && indexMusic==musics.length){    
-            indexMusic=0;
-    } else if(!isInfinite && indexMusic==musics.length){
-        --indexMusic;
-        playPause();
-    }
+    // if(isInfinite && indexMusic==musics.length){
+    //         indexMusic=0;
+    // } else if(!isInfinite && indexMusic==musics.length){
+    //     --indexMusic;
+    //     playPause();
+    // }
     init(indexMusic);       
 }
 //Xử lý thời gian nhạc
@@ -208,6 +241,7 @@ rangeBar.oninput = function(){
 }
 //Thay đổi nhạc,ảnh và tên
 function init(indexMusic){
+    
     displayTimer();
     song.setAttribute('src',`music/${musics[indexMusic].file}`);
     musicImage.setAttribute('src',musics[indexMusic].image);
@@ -250,4 +284,5 @@ changeBgColor.onclick = function(){
         isBgColor =1;
     }
 }
+
 init(indexMusic);
