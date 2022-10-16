@@ -82,7 +82,6 @@ const musics =[
         title:'Lời anh chưa thể nói',
         file:'Loi-Anh-Chua-The-Noi.mp3',
         image:'https://i.ytimg.com/vi/yfpiynLlcDA/maxresdefault.jpg'
-        // image:'https://i.ytimg.com/vi/IagHzELYX6U/maxresdefault.jpg'
     },
     {
         id:11,

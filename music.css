@@ -27,9 +27,7 @@ body{
     box-shadow: rgba(100, 100, 111, 0.349) 0px 4px 6px ;
     padding: 35px 15px 30px;
 }
-.play-shuffle{
-    font-size: 25px;
-}
+
 .music-black{
     background:#000000d9;
     color:white;
