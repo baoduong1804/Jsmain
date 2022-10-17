@@ -14,6 +14,7 @@ body{
     font-family: 'Dancing Script', cursive;
     /* font-family: 'Poppins', sans-serif; */
     background-size: cover;
+    background-position:center;
     /* backdrop-filter:blur(0px); */
     /* background-image: linear-gradient(to right bottom ,greenyellow, skyblue, pink,yellow); */
 }
