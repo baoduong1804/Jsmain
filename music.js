@@ -1,5 +1,5 @@
 
-const song = document.getElementById("song");
+const song = document.querySelector('#song');
 const playBtn = document.querySelector('.player-inner');
 const nextBtn = document.querySelector('.play-forward');
 const prevBtn = document.querySelector('.play-back');
@@ -15,12 +15,17 @@ const repeatBtn = document.querySelector('.play-repeat');
 const shuffleBtn = document.querySelector('.play-shuffle');
 const musicBox  =document.querySelector('.music');
 // const infiniteBtn = document.querySelector('.play-infinite');
+const listMusic =document.querySelector('.list-music');
+const listMusicBtn =document.querySelector('.button-list-music');
+const contentMusic = document.querySelector('.content');
+
 let isPlaying =true;
 let isRepeat = false;
 let isInfinite = false;
 var indexMusic = 0;
 let isBgImage = true;
 let isBgColor = 1;
+let isListMusicBtn = false;
 //List bài hát
 const musics =[
     {
@@ -175,6 +180,7 @@ function playPause(){
 }
 //Xử lý khi ấn nút Play Forward
 nextBtn.onclick = function(){
+    document.querySelector(`.list${indexMusic+1}`).removeAttribute('style');
     ++indexMusic;
     if(indexMusic == musics.length){
         indexMusic = 0;
@@ -183,6 +189,7 @@ nextBtn.onclick = function(){
 }
 //Xử lý khi ấn nút Play Back
 prevBtn.onclick = function(){
+    document.querySelector(`.list${indexMusic+1}`).removeAttribute('style');
     --indexMusic;
     if(indexMusic==-1){
         indexMusic = musics.length-1;
@@ -192,6 +199,7 @@ prevBtn.onclick = function(){
 //Qua bài mới khi kết thúc
 song.onended = function(){
     var indexMusicOld =indexMusic;
+    document.querySelector(`.list${indexMusic+1}`).removeAttribute('style');
     if(!isRepeat){
         if(isShuffle){//Phát bài ngẫu nhiên ko trùng bài trc đó
             do{
@@ -215,6 +223,7 @@ song.onended = function(){
     //     --indexMusic;
     //     playPause();
     // }
+
     init(indexMusic);       
 }
 //Xử lý thời gian nhạc
@@ -240,7 +249,18 @@ rangeBar.oninput = function(){
 }
 //Thay đổi nhạc,ảnh và tên
 function init(indexMusic){
+    anyListMusic = function(e){
+        document.querySelector(`.list${indexMusic+1}`).removeAttribute('style');
+        indexMusic= e.target.id-1;
+        init(indexMusic);
+    }
+    var listSong= document.querySelectorAll(`.list`);
+    var idMusic=0;
+    for(var i=0;i<listSong.length;i++){
+        listSong[i].onclick = anyListMusic;
+    };
     
+    document.querySelector(`.list${indexMusic+1}`).style.background ='greenyellow';
     displayTimer();
     song.setAttribute('src',`music/${musics[indexMusic].file}`);
     musicImage.setAttribute('src',musics[indexMusic].image);
@@ -283,5 +303,26 @@ changeBgColor.onclick = function(){
         isBgColor =1;
     }
 }
-
+//Lấy danh sách phát
+var getMusics = musics.map(musicList)
+contentMusic.innerHTML=getMusics.join('');
+function musicList(music,index){
+    return `<div class="list list${index+1}" id="${index+1}">${index+1}. ${music.title}</div>`
+}
+openClose();
+//Bật tắt nút mở listMusic
+listMusicBtn.onclick = openClose;
+function openClose(){
+   if(isListMusicBtn){
+       listMusicBtn.innerHTML = '<ion-icon name="close-circle-outline"></ion-icon>';
+       isListMusicBtn = false;
+       listMusic.style.opacity = '1';
+       contentMusic.style.height = '180px';
+   } else{
+        contentMusic.removeAttribute('style');
+       listMusicBtn.innerHTML = '<ion-icon name="list-circle-outline" class="open"></ion-icon>';
+       isListMusicBtn = true;
+       listMusic.style.opacity = '0';
+   }
+}
 init(indexMusic);

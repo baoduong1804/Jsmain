@@ -473,3 +473,100 @@ console.log([...new Set(array)])
 //     .finally(function(){
 //         console.log()
 //     })
+
+///*const,let,var
+//Const,let:trong phạm vi object
+//Var có Hosting; let và const ko có
+//const không thể sử dụng toán tử gán thứ 2()
+//Hosting là đưa định nghĩa biến lên trên đầu
+
+///*Arrow function () => {}
+// Nếu có {} thì thực hiện đoạn code trong {}
+// Nếu không có {} thì sau dấu => là return
+// Không dùng đc this
+// tong = function(a,b){//Anonymous function
+//     return a+b
+// }
+// tong = (a,b) => {
+//     return a+b
+// }
+// tong = (a,b) => a+b
+// obj= (a,b) =>({a:a,b:b})//return object
+// console.log(obj(1,2))
+// console.log(tong(1,3))
+
+// ///*Template string
+// const ten = 'bao';
+// const ho = 'duong'
+// const nickName= `${ho} ${'van '+ten}`;
+// console.log(nickName)
+
+///*Classes (cách viết khác của constructor function)
+// class Course {
+//     constructor(name,price){
+//         this.name=name;
+//         this.price=price;
+//     }
+//     getName = function(){
+//         return this.name
+//     }
+// }
+// const phpCourse = new Course('PHP',100);
+// const jsCourse = new Course('Javascript',1500);
+// console.log(phpCourse)
+// console.log(jsCourse)
+
+// ///*Enhanced object literals
+// //1.Định nghĩa key:value cho object
+// //2.Định nghĩa method cho object
+// //3.Định nghĩa key cho object dưới dạng biến
+// var nameCourse = 'Javascript';
+// var dayCourse = 'Day'
+// var price  = 1500;
+// var course = {
+//     nameCourse,//= vs nameCourse:nameCourse
+//     price, //= vs price:price,
+//     getName(){
+//         return this.nameCourse
+//     },
+//     [dayCourse]:'monday'
+// }
+// console.log(course.getName())
+
+///*Default parameter values
+
+///*Destructuring (phân rã)
+// var array = ['Javascript','PHP','Ruby'];
+// var [a, b, c] = array;
+// var [a, ...rest] = array;//Rest parameters
+// console.log(a)
+// console.log(rest)
+// var course = {
+//     name:'Javascript',
+//     price:1500,
+//     day:'everyday'
+// }
+// var {name,price} = course;
+// var {name,...rest2} = course;
+// console.log(name,price);
+// console.log(rest2)
+// function logger(...params){
+//     return params
+// }
+// console.log(logger(1,2,3,4,5))//nhận được 1 mảng
+
+// ///*Spread
+// var array1 = ['Javascript','Html','Css'];
+// var array2 = ['ReactJs','Angular'];
+// var array3 = [...array1,...array2]
+// console.log(array3)
+
+///*Tagged template literals
+// function hightlight(...rest){
+//     console.log(rest)
+// }
+// var brand = 'F8';
+// var course = 'Javascript'
+// hightlight`Học lập trình ${course} tại ${brand}`
+
+///*Module
