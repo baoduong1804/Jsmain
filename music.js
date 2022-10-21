@@ -249,17 +249,11 @@ rangeBar.oninput = function(){
 }
 //Thay đổi nhạc,ảnh và tên
 function init(indexMusic){
-    anyListMusic = function(e){
-        document.querySelector(`.list${indexMusic+1}`).removeAttribute('style');
-        indexMusic= e.target.id-1;
-        init(indexMusic);
-    }
+    
     var listSong= document.querySelectorAll(`.list`);
-    var idMusic=0;
     for(var i=0;i<listSong.length;i++){
         listSong[i].onclick = anyListMusic;
     };
-    
     document.querySelector(`.list${indexMusic+1}`).style.background ='greenyellow';
     displayTimer();
     song.setAttribute('src',`music/${musics[indexMusic].file}`);
@@ -267,6 +261,11 @@ function init(indexMusic){
     musicName.textContent = musics[indexMusic].title;
     exchange();
     playPause();
+}
+anyListMusic = function(e){
+    document.querySelector(`.list${indexMusic+1}`).removeAttribute('style');
+    indexMusic= e.target.id-1;
+    init(indexMusic);
 }
 //Thay đổi background Image
 changeBgImage.onclick = function(){
