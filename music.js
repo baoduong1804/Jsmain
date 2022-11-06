@@ -18,6 +18,7 @@ const musicBox  =document.querySelector('.music');
 const listMusic =document.querySelector('.list-music');
 const listMusicBtn =document.querySelector('.button-list-music');
 const contentMusic = document.querySelector('.content');
+const musicBars = document.querySelector('.music-bars-circle');
 
 let isPlaying =true;
 let isRepeat = false;
@@ -283,7 +284,7 @@ changeBgColor.onclick = function(){
         changeBgColor.removeAttribute('style');
         musicBox.classList.add('music-black');//màu đen
         musicName.classList.add('music-name-green');
-        changeBgColor.classList.add('music-colorful');
+        changeBgColor.style.background = 'linear-gradient(to right bottom ,greenyellow, skyblue, pink,yellow)'
     } else if(isBgColor==2) {
         changeBgColor.removeAttribute('style');
         musicBox.classList.remove('music-black');
@@ -303,10 +304,11 @@ changeBgColor.onclick = function(){
     }
 }
 //Lấy danh sách phát
+var codeMusicBars = '<div class="music-bars-circle"><div class="bar bar1"></div><div class="bar bar2"></div><div class="bar bar3"></div><div class="bar bar4"></div></div></div></div>'
 var getMusics = musics.map(musicList)
 contentMusic.innerHTML=getMusics.join('');
 function musicList(music,index){
-    return `<div class="list list${index+1}" id="${index+1}">${index+1}. ${music.title}</div>`
+    return `<div class="list list${index+1}" id="${index+1}">${index+1}. ${music.title}${codeMusicBars}`
 }
 openClose();
 //Bật tắt nút mở listMusic
@@ -324,4 +326,5 @@ function openClose(){
        listMusic.style.opacity = '0';
    }
 }
+console.log(musicBars)
 init(indexMusic);

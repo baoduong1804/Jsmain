@@ -46,7 +46,7 @@ var languages2 =[
 // console.log(languages.slice(1,2));//căt mảng từ đầu tst1 --> đâu tst2,nếu chỉ có 1 thông số thì cắt đên hêt mảng
 // console.log(languages)
 
-///* Function( đối tượng)
+///* Function
 // function writeLog(message,message2){
 //     console.log(message)
 //     console.log(message2)
@@ -81,7 +81,7 @@ var languages2 =[
 //     age:19,
 //     address:'Binh Dinh',
 //     getName: function(){
-//         return this.name0
+//         return this.name
 //     }
 // }
 // //Function --> Phương thức(method),Others --> Thuộc tính(property)
@@ -102,7 +102,7 @@ var languages2 =[
 // var user = new User('Son', 'Dang', 'Avatar2');
 // author.title='hi';
 // user.comment='hello';
-// ///Object prototype(thêm thuộc tinh ở bên ngoài hàm tạo )
+// ///Object prototype(thêm method,property ở bên ngoài hàm tạo )
 // User.prototype.className ='F8';//thêm thuộc thính className vào User
 // User.prototype.getClassName = function(){
 //     return this.className;
@@ -180,10 +180,11 @@ var courses=[
 // console.log(isFree)
 /*
 forEach():duyệt qua
-every():kiểm tra tất cả các phần tử(từ trên xuống) thỏa mãng đk j đó thì trả về true
-some(): ngược với every() ,kiểm tra chỉ cần 1 phần thỏa mãng đk đó thi trả veed true
+every():kiểm tra tất cả các phần tử(từ trên xuống) thỏa mãng đk gì đó thì trả về true
+some(): ngược với every() ,kiểm tra chỉ cần 1 phần thỏa mãng đk đó thi trả về true
 find():(chỉ trả về đc 1 phần tử) phần tử nào thỏa mãng dk(return true) đầu tiên courses sẽ trả về ptu đó
-filter():(trả về all phần tử) phần tử nào thỏa mãng dk(return true) courses sẽ trả về các ptu đó
+filter():(trả về all phần tử) phần tử nào thỏa mãng dk(return true) courses sẽ trả về các ptu đó.
+includes(): để xem 1 chuỗi có được tìm thấy trong chuỗi khác hay ko nếu tìm thấy thì nó sẽ trả về true, ko tìm thấy trả về false.
 */
 ///*map():lần 1 lấy element đầu tiên trong mảng truyền vào courseHandler(thực hiện code trong function courseHandler) --> course nhận đc thông số của element đó,sau đó lấy elm thứ 2 và tt như vậy.
 //      function thứ n return j thì vị trí thứ n của newCourses nhận đc cái đó
@@ -445,13 +446,26 @@ console.log([...new Set(array)])
 //     console.log('Click me!')
 // }
 
-// ///*JSON
+///*JSON
 // JSON.stringify( );//Từ Js types -> JSON
 // JSON.parse( );//Từ JSON -> Js types
-
-// //Promise
-// //1.new Promise
-// //2.Executor
+/*
+-CRUD:
+    -Create: Tạo mới  --> POST
+    -Read: Lấy dữ liệu --> GET
+    -Update: Chỉnh sửa --> PUT/ PATCH
+    -Delete: Xóa --> DELETE
+    POST, GET, PUT/ PATCH, DELETE :phương thức;
+    HTTP protocol: giao thức HTTP(có nhiều phương thức);
+-Postman
+*/
+///*Promise
+//Có 3 trạng thái 
+//-pending: Kết quả chưa được sủ lí xong đang chờ
+//-fullfilled: Tác vụ được thực hiện thành công
+//-rejected: Tác vụ ko đồng bộ thất bại
+// 1.new Promise
+// 2.Executor
 // var promise = new Promise(
 //     //Executor
 //     function(resolve,reject){
@@ -473,6 +487,9 @@ console.log([...new Set(array)])
 //     .finally(function(){
 //         console.log()
 //     })
+//promise1 = Promise.resolve();//promise luôn thành công
+//promise2 = Promise.reject();//promise luôn thất bại
+//promise = Promise.all([promise1,promise2]);trả về 1 promise;
 
 ///*const,let,var
 //Const,let:trong phạm vi object
@@ -516,10 +533,10 @@ console.log([...new Set(array)])
 // console.log(phpCourse)
 // console.log(jsCourse)
 
-// ///*Enhanced object literals
-// //1.Định nghĩa key:value cho object
-// //2.Định nghĩa method cho object
-// //3.Định nghĩa key cho object dưới dạng biến
+///*Enhanced object literals
+//1.Định nghĩa key:value cho object
+//2.Định nghĩa method cho object
+//3.Định nghĩa key cho object dưới dạng biến
 // var nameCourse = 'Javascript';
 // var dayCourse = 'Day'
 // var price  = 1500;
@@ -570,3 +587,7 @@ console.log([...new Set(array)])
 // hightlight`Học lập trình ${course} tại ${brand}`
 
 ///*Module
+
+///*Optional chaining (?.)
+
+///*Fetch()

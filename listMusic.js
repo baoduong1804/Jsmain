@@ -101,13 +101,15 @@ const musics =[
 const listMusic =document.querySelector('.list-music');
 const listMusicBtn =document.querySelector('.button-list-music');
 const contentMusic = document.querySelector('.content');
-
+const musicBars = document.querySelector('.music-bars-circle');
 let isListMusicBtn = false;
 
-var getMusics = musics.map(function(music,index){
-     return `<div class="list">${index+1}. ${music.title}</div>`
-})
+var codeMusicBars = '<div class="music-bars-circle"><div class="bar bar1"></div><div class="bar bar2"></div><div class="bar bar3"></div><div class="bar bar4"></div></div></div></div>'
+var getMusics = musics.map(musicList)
 contentMusic.innerHTML=getMusics.join('');
+function musicList(music,index){
+    return `<div class="list list${index+1}" id="${index+1}">${index+1}. ${music.title}${codeMusicBars}<ion-icon name="heart" class="heart"></ion-icon>`
+}
 openClose();
 listMusicBtn.onclick = openClose;
 function openClose(){
@@ -115,11 +117,13 @@ function openClose(){
         listMusicBtn.innerHTML = '<ion-icon name="close-circle-outline"></ion-icon>';
         isListMusicBtn = false;
         listMusic.style.opacity = '1'
+        musicBars.style.opacity = '1'
         console.log(1)
     } else{
         listMusicBtn.innerHTML = '<ion-icon name="list-circle-outline" class="open"></ion-icon>';
         isListMusicBtn = true;
         listMusic.style.opacity = '0'
+        musicBars.style.opacity = '0'
     }
 }
 

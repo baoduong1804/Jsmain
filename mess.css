@@ -1,0 +1,44 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+}
+body{
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    
+}
+.header{
+    text-align: center;
+    color: rgb(0, 17, 255);
+}
+.container{
+    position: relative;
+    border:1px solid black;
+    padding:20px;
+    height: 300px;
+    width: 300px;
+}
+.messenger{
+    width: 260px;
+    height: 220px;
+    border: 1px solid black;
+    overflow: auto;
+    padding: 0 10px 0;
+    font-size: 1.2em;
+}
+ul{
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+   
+}
+
+.input-messenger{
+    position: absolute;
+    bottom: 10px;
+    left:40px;
+    
+}
