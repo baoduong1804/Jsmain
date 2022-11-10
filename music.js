@@ -304,11 +304,11 @@ changeBgColor.onclick = function(){
     }
 }
 //Lấy danh sách phát
-var codeMusicBars = '<div class="music-bars-circle"><div class="bar bar1"></div><div class="bar bar2"></div><div class="bar bar3"></div><div class="bar bar4"></div></div></div></div>'
+// var codeMusicBars = '<div class="music-bars-circle"><div class="bar bar1"></div><div class="bar bar2"></div><div class="bar bar3"></div><div class="bar bar4"></div></div></div></div>'
 var getMusics = musics.map(musicList)
 contentMusic.innerHTML=getMusics.join('');
 function musicList(music,index){
-    return `<div class="list list${index+1}" id="${index+1}">${index+1}. ${music.title}${codeMusicBars}`
+    return `<div class="list list${index+1}" id="${index+1}">${index+1}. ${music.title}</div>` //${codeMusicBars}
 }
 openClose();
 //Bật tắt nút mở listMusic

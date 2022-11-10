@@ -217,14 +217,13 @@ body{
     transform: scale(1.2);
 }
 
-
+/* 
 .music-bars-circle{
     position: absolute;
     right:10%;
     width: 35px;
     height: 35px;
     border-radius: 50%;
-    /* border: 1px solid white; */
     display: flex;
     justify-content: center;
     transform:rotate(180deg);
@@ -239,7 +238,6 @@ body{
     transform: translateX(-2.5%) ;
     animation: animate 0.7s linear infinite;
     animation-delay: 0.4s;
-    /* border-radius: 0 0 8px 8px; */
 }
 @keyframes animate {
     0%{
@@ -267,4 +265,4 @@ body{
 .bar4{
     animation-delay: 0.4s;
     background:rgba(255, 0, 0, 0.897);
-}
+} */
