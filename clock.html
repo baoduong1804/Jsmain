@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding:0;
+            box-sizing: border-box;
+        }
+        body{
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            min-height:100vh;
+            background-color: black;
+            color: white;
+        }
+        .clock-number{
+            display:flex;
+            gap: 10px;
+            font-size: 30px;
+            border: 1px solid white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 190px;
+            margin: 0 auto;
+            margin-top: 30px;
+        }
+        .hour{
+            color:red;
+            text-shadow: 0 0 40px #fa7c7c,
+            0 0 20px #fa7c7c;
+            /* 0 0 15px #fa7c7c, */
+            /* 0 0 20px #fa7c7c; */
+        }
+        .minute{
+            color:rgb(19, 193, 224);
+            text-shadow: 0 0 40px skyblue,
+            0 0 20px skyblue;
+        }
+        .second{
+            color:rgb(255, 147, 47);
+            text-shadow: 0 0 40px rgb(255,147,47),
+            0 0 20px rgb(255,147,47);
+        }
+        .clock{
+            width: 250px;
+            height: 250px;
+            background:white;
+            background:rgb(255,255,255) url(https://ae01.alicdn.com/kf/HTB1OXlaGVGWBuNjy0Fbq6z4sXXav.jpg_640x640Q90.jpg_.webp);
+            background-size:cover;
+            border-radius:50%;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            position: relative;
+            box-shadow: inset 0 0 0 8px skyblue;
+        }
+        .clock span {
+            width: 10px;
+            height: 10px;
+            background-color: rgb(0, 0, 0);
+            border-radius:50%;
+            z-index: 100;
+        }
+        
+       .second-bar{
+            position: absolute;
+            top: calc(250px/2 - 94px);
+            left: calc(50% - 2px/2);
+            width: 2px;
+            height: 94px;
+            background-color: red;
+            border-radius: 3px;
+            transform-origin: bottom;
+            box-shadow: 1px 1px 1px black;
+        }
+        .minute-bar{
+            position: absolute;
+            top: calc(250px/2  - 74px);
+            left: calc(50% - 4px/2);
+            width: 4px;
+            height: 74px;
+            background-color: #ff932f;
+            border-radius: 3px;
+            transform-origin: bottom;
+            box-shadow: 1px 1px 1px black;
+        }
+        .hour-bar{
+            position: absolute;
+            top: calc(250px/2  - 60px);
+            left: calc(50% - 5px/2);
+            width: 5px;
+            height: 60px;
+            background-color: rgba(29, 12, 5, 0.911);
+            border-radius: 3px;
+            transform-origin: bottom;
+            box-shadow: 1px 1px 1px black;
+        }
+       
+    </style>
+</head>
+<body>
+    <div class="container">
+    <div class="clock">
+        <span></span>
+        <div class="second-bar"></div>
+        <div class="minute-bar"></div>
+        <div class="hour-bar"></div>
+    </div>
+    <div class="clock-number">
+        <div class="hour">00</div>
+        <span>:</span>
+        <div class="minute">00</div>
+        <span>:</span>
+        <div class="second">00</div>
+        </div>
+    </div>
+</body>
+<script>
+    const hour = document.querySelector('.hour');
+    const minute = document.querySelector('.minute');
+    const second = document.querySelector('.second');
+    const secondBar = document.querySelector('.second-bar');
+    const minuteBar = document.querySelector('.minute-bar');
+    const hourBar = document.querySelector('.hour-bar');
+   
+    setInterval(() => {
+    let date = new Date();
+    let hours = date.getHours();
+    let minutes = date.getMinutes();
+    let seconds = date.getSeconds();
+    if(hours < 10 ) hours = `0${hours}`;
+    if(minutes < 10 ) minutes = `0${minutes}`;
+    if(seconds < 10 ) seconds = `0${seconds}`;
+        hour.innerText = hours;
+        minute.innerText = minutes;
+        second.innerText = seconds;
+        secondBar.style.transform = `rotate(${seconds*6}deg)`;
+        minuteBar.style.transform = `rotate(${minutes*6 + seconds*(360/3600)}deg)`;
+        hourBar.style.transform = `rotate(${hours*(360/12) + minutes*(360/12/60) + seconds*(360/12/3600)}deg)`;
+    },100);
+</script>
+</html>

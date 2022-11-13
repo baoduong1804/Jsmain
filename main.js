@@ -19,6 +19,8 @@ var myString = 'Hoc JS tai JS F8 JS';
 
 //console.log(languages.split(', '));//tách chuỗi thành array.Căt theo điểm chung là ', '.  split(''): tách từ chữ cái 
 
+//includes(): để xem 1 chuỗi có được tìm thấy trong chuỗi khác hay ko nếu tìm thấy thì nó sẽ trả về true, ko tìm thấy trả về false.
+
 // console.log(myString.charAt(4));in ra kí tự trong chuỗi nếu ko trả ra chuỗi rỗng(string)
 //console.log(myString[4]);//in ra kí tự trong chuỗi nếu ko trả ra undefined
 
@@ -44,6 +46,7 @@ var languages2 =[
 // languages.splice(1,0,'Angular');//đưa con trỏ chuột đến trc vị trí elm=ts1, xóa số lượng = tst2 tính từ con trỏ chuột vê sau, thêm phần tử là tst3 trở đi
 // console.log(languages.concat(languages2));//nối array1 với array2
 // console.log(languages.slice(1,2));//căt mảng từ đầu tst1 --> đâu tst2,nếu chỉ có 1 thông số thì cắt đên hêt mảng
+// console.log(languages.reverse()); đảo ngược mảng và trả về mảng đã đảo ngược
 // console.log(languages)
 
 ///* Function
@@ -84,7 +87,8 @@ var languages2 =[
 //         return this.name
 //     }
 // }
-// //Function --> Phương thức(method),Others --> Thuộc tính(property)
+
+///* Function --> Phương thức(method),Others --> Thuộc tính(property)
 // delete myInfor.age;//xóa key age
 // myInfor.phone ='0339610933';//thêm key phone
 // console.log(myInfor.address)//in ra Binh Dinh
@@ -109,6 +113,7 @@ var languages2 =[
 // }//thêm phương thức getClassName vào User
 // console.log(author.getClassName())
 // console.log(user)
+
 ///Date
 // var date = new Date();
 // var year = date.getFullYear();
@@ -119,6 +124,7 @@ var languages2 =[
 // var second = date.getSeconds();
 // var millisecond = date.getMilliseconds();
 // console.log(`${day}/${month}/${year} ${hour}:${minute}:${second}:${millisecond}`)
+
 ///* Switch case
 // var number= 5;
 // switch(number){
@@ -132,6 +138,7 @@ var languages2 =[
 //     default:
 //         console.log('khac');
 // }
+
 ///* Loop (Vòng lặp)
 //for/in: lặp qua key của đối tượng 
 // //for(var key in languages){
@@ -184,7 +191,6 @@ every():kiểm tra tất cả các phần tử(từ trên xuống) thỏa mãng 
 some(): ngược với every() ,kiểm tra chỉ cần 1 phần thỏa mãng đk đó thi trả về true
 find():(chỉ trả về đc 1 phần tử) phần tử nào thỏa mãng dk(return true) đầu tiên courses sẽ trả về ptu đó
 filter():(trả về all phần tử) phần tử nào thỏa mãng dk(return true) courses sẽ trả về các ptu đó.
-includes(): để xem 1 chuỗi có được tìm thấy trong chuỗi khác hay ko nếu tìm thấy thì nó sẽ trả về true, ko tìm thấy trả về false.
 */
 ///*map():lần 1 lấy element đầu tiên trong mảng truyền vào courseHandler(thực hiện code trong function courseHandler) --> course nhận đc thông số của element đó,sau đó lấy elm thứ 2 và tt như vậy.
 //      function thứ n return j thì vị trí thứ n của newCourses nhận đc cái đó
@@ -590,4 +596,25 @@ console.log([...new Set(array)])
 
 ///*Optional chaining (?.)
 
-///*Fetch()
+///*Fetch();
+
+
+///*IIFE
+// ;(function(){
+//     console.log('IIFE')
+// })()
+
+///*strict mode "use strict"
+// - Để code có tính chặc chẽ hơn
+
+///* Scope (Phạm vi)
+// - Global - Toàn cầu
+// - Code block - Khối mã :let, const
+// - Local scope - Hàm :var , function
+// - Khi goi mỗi hàm luôn có 1 phạm vi mới được tạo ra
+// - Các hàm có thể truy cập các biến đc khai báo trong phạm vi của nó và bên ngoài nó.
+
+///*Hoisting
+//var khi hoisted được đưa phần khai báo biến lên trên đầu phạm vi của nó và có giá trị đầu là undefined
+// let, const khi hoisted được đưa phần khai báo biến lên trên đầu phạm vi của nó, ko đc khởi tạo giá trị và đc đưa vào "Temporal dead zone"
+// function : đưa cả đoạn code lên trên đầu.

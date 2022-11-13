@@ -19,10 +19,12 @@ const listMusic =document.querySelector('.list-music');
 const listMusicBtn =document.querySelector('.button-list-music');
 const contentMusic = document.querySelector('.content');
 const musicBars = document.querySelector('.music-bars-circle');
+const modalExit = document.querySelector('.modal-exit');
 
+let isShuffle =false;
 let isPlaying =true;
 let isRepeat = false;
-let isInfinite = false;
+// let isInfinite = false;
 var indexMusic = 0;
 let isBgImage = true;
 let isBgColor = 1;
@@ -126,7 +128,7 @@ const musics =[
         image:'https://bdkhtravinh.vn/nguoi-yeu-oi-co-biet-em-da-yeu-anh-rat-nhieu/imager_26309.jpg'
     }
 ];
-let isShuffle =false;
+
 shuffleBtn.onclick =function(){
     if(isShuffle){
      shuffleBtn.removeAttribute('style');
@@ -319,6 +321,9 @@ function openClose(){
        isListMusicBtn = false;
        listMusic.style.opacity = '1';
        contentMusic.style.height = '180px';
+       modalExit.classList.add('modal');
+       getModal();
+       
    } else{
         contentMusic.removeAttribute('style');
        listMusicBtn.innerHTML = '<ion-icon name="list-circle-outline" class="open"></ion-icon>';
@@ -326,5 +331,15 @@ function openClose(){
        listMusic.style.opacity = '0';
    }
 }
-console.log(musicBars)
+//Thoát music list khi ấn vào modal(ngoài music list)
+function getModal(){
+    // const modal = document.querySelector('.modal');
+    modalExit.onclick = function(){
+        contentMusic.removeAttribute('style');
+        listMusicBtn.innerHTML = '<ion-icon name="list-circle-outline" class="open"></ion-icon>';
+        isListMusicBtn = true;
+        listMusic.style.opacity = '0';
+    }
+}
+
 init(indexMusic);
