@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins&family=Roboto:wght@300;400;500;700&display=swap');
+*{
+    margin: 0;
+    padding:0;
+    box-sizing:border-box;
+}
+html{
+    font-size: 62,5%;
+}
+body{
+    background-image:linear-gradient(to left, skyblue, pink );
+    color: white;
+    font-family: 'Poppins', sans-serif;
+}
+.tea__container{
+    width: 600px;
+    margin: 40px auto 0;
+}
+
+.tea__list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    height: 520px;
+}
+
+.tea__item{
+    width: 180px;
+}
+
+.tea__item-img{
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background:rgba(230, 88, 194, 0.26);
+    border-radius: 10px 10px 0 0;
+}
+
+.tea__item-img img{
+    height: 110px;
+    transition: 0.5s;
+}
+
+.tea__item-img img:hover{
+    transform: translateY(-30px);
+    
+}
+
+.tea__item-content{
+    padding:8px 20px;
+    height: 140px;
+    transform: translateY(-25px);
+    background-color: rgba(60, 164, 233, 0.2);
+    backdrop-filter: blur(20px);
+    border-radius: 0 0 10px 10px;
+}
+
+.tea__item-title{
+    height: 20px;
+    font-size:1rem;
+    text-align: center;
+    margin-top: 5px;
+    line-height: 1.0rem;
+    color: rgb(2, 49, 255);
+    letter-spacing: -0.6px;
+}
+
+.tea__item-description{
+    font-size:0.5rem;
+    height: 36px;
+    margin-top: 5px;
+}
+
+.tea__item-price{
+    text-align: right;
+    color: blueviolet;
+    margin: -5px 0 5px;
+}
+
+.tea__item-add{
+    border:none;
+    outline: none;
+    padding: 7px;
+    width: 80%;
+    border-radius: 8px;
+    background-color: pink;
+    margin-left: 12px;
+}
+.tea__item-add:hover{
+    transition: 0.2s;
+    background-color: rgb(241, 135, 215);
+    cursor: pointer;
+
+}
+
+.tea__listPage{
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+}
+
+.tea__listPage li{
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    color: black;
+    background-color: white;
+    margin:0 10px 0;
+    cursor: pointer;
+}
+
+.tea__listPage .active{
+    background-color: rgba(118, 103, 250, 0.822);
+}
+
+@media screen and (max-width:720px){
+    .tea__container{
+        width: 400px;
+        margin: 40px auto 0;
+    }
+    
+    .tea__list{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        height: 780px;
+    }
+}

@@ -618,3 +618,10 @@ console.log([...new Set(array)])
 //var khi hoisted được đưa phần khai báo biến lên trên đầu phạm vi của nó và có giá trị đầu là undefined
 // let, const khi hoisted được đưa phần khai báo biến lên trên đầu phạm vi của nó, ko đc khởi tạo giá trị và đc đưa vào "Temporal dead zone"
 // function : đưa cả đoạn code lên trên đầu.
+
+///*Domain
+//-Ý nghĩa:Địa chỉ web --> Miền --> Tên miền(Domain Name) or (DN)
+//-Cấu trúc: Tên miền.Hậu tố(google.com,...)
+//-Miền phụ (sub domain) or (SD): Miền phụ.Tên miền.Hậu tố (vd:mail.google.com)
+//VD: .com.vn (.com: second level domain (TLD); .vn: top level domain (SLD))
+//VD: Blog.F8.edu.vn (blog:SD, F8:DN, .edu:STD, .vn:TLD)

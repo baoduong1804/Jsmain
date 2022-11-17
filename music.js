@@ -323,7 +323,6 @@ function openClose(){
        contentMusic.style.height = '180px';
        modalExit.classList.add('modal');
        getModal();
-       
    } else{
         contentMusic.removeAttribute('style');
        listMusicBtn.innerHTML = '<ion-icon name="list-circle-outline" class="open"></ion-icon>';
@@ -331,9 +330,8 @@ function openClose(){
        listMusic.style.opacity = '0';
    }
 }
-//Thoát music list khi ấn vào modal(ngoài music list)
+//Thoát music list khi ấn vào modalExit(ngoài music list)
 function getModal(){
-    // const modal = document.querySelector('.modal');
     modalExit.onclick = function(){
         contentMusic.removeAttribute('style');
         listMusicBtn.innerHTML = '<ion-icon name="list-circle-outline" class="open"></ion-icon>';
