@@ -11,10 +11,10 @@ body{
     background-image:linear-gradient(to left, skyblue, pink );
     color: white;
     font-family: 'Poppins', sans-serif;
+    overflow: hidden;
 }
 .tea__container{
-    width: 600px;
-    margin: 40px auto 0;
+    position: relative;
 }
 
 .tea__list{
@@ -22,6 +22,9 @@ body{
     flex-wrap: wrap;
     justify-content: space-between;
     height: 520px;
+    width: 600px;
+    margin: 40px auto 0;
+    position: relative;
 }
 
 .tea__item{
@@ -91,7 +94,6 @@ body{
     transition: 0.2s;
     background-color: rgb(241, 135, 215);
     cursor: pointer;
-
 }
 
 .tea__listPage{
@@ -116,15 +118,102 @@ body{
 }
 
 @media screen and (max-width:720px){
-    .tea__container{
-        width: 400px;
-        margin: 40px auto 0;
-    }
     
-    .tea__list{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        height: 780px;
+}
+
+.tea__cart{
+    position: absolute;
+    top:10px;
+    right:0px;
+    z-index: 1000;
+    height: 96vh;
+    background-color: white;
+    border-radius: 10px 0 0 10px;
+    width: 300px;
+    display: none;
+    animation: appear 0.2s ease-in;
+    
+}
+
+@keyframes appear {
+    0%{
+        transform: translateX(100%);
     }
+    100%{
+        transform: translateX(0%);
+    }
+}
+.tea__cart-header{
+    color: black;
+    border-bottom: 1px solid rgb(247, 167, 227);
+    position: relative;
+    padding:10px;
+    font-family: 'Dancing Script', cursive;
+    text-align: center;
+    width: 100%;
+    z-index: 10;
+}
+.tea__cart-header span{
+    font-size: 1.5rem;
+    color:rgb(28, 24, 245);
+    cursor: default;
+    z-index: 20;
+}
+
+.tea__cart-close{
+    font-size: 2rem;
+    position: absolute;
+    right:0;
+    cursor: pointer;
+}
+
+.tea__icon-cart{
+    position:absolute;
+    top:0px;
+    right:100px;
+    background-color: rgba(255, 255, 255, 1);
+    padding:5px 15px 5px;
+    display: flex;
+    align-items: center;
+    gap:10px;
+    border-radius: 20px;
+    box-shadow: 0 0 3px rgb(233, 117, 217);
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.tea__icon-cart:hover {
+    transform: scale(1.05);
+}
+.tea__icon-title{
+    color:black;
+    font-size: 0.9rem;
+}
+
+.tea__icon-cart ion-icon{
+    font-size: 1.6rem;
+    color:black;
+}
+
+.tea__cart-container{
+    padding:10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 87%;
+    overflow: auto;
+}
+.add{
+    background-color: aquamarine;
+}
+
+.tea__cart-container .add{
+    background-color: aquamarine;
+}
+ .tea__cart-container .tea__item{
+    transform: scale(0.8);
+    margin:-30px;
+}
+.add:hover{
+    background-color: aquamarine;
 }
