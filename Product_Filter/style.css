@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins&family=Roboto:wght@300;400;500;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height:100vh;
+    background-color: rgb(216, 213, 213);
+   
+}
+
+.app{
+    width: 400px;
+    height: 550px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 0 5px rgb(146, 145, 145);
+}
+
+.header{
+    height: 120px;
+    text-align: center;
+    padding:20px 20px 20px;
+}
+
+.header__title{
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+}
+
+.search{
+    width: 100%;
+    display: flex;
+    height: 35px;
+    border: 1px solid skyblue;
+    border-radius: 5px;
+    padding:0 8px 0 ;
+}
+
+.input{
+    flex:1;
+    border: none;
+    outline: none;
+}
+
+.search-icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 7px;
+}
+
+.container{
+    height: calc(550px - 120px);
+    overflow: auto;
+    /* scrollbar-width: thin;           */
+    /* "auto" hoặc "thin" */
+    /* scrollbar-color: rgb(29, 218, 218) #ccc;    */
+    /* scroll thumb and track */
+}
+
+.list{
+    list-style-type: none;
+}
+
+.item{
+    height: 110px;
+    display: flex;
+    padding: 20px;
+    cursor: pointer;
+}
+
+.item:hover{
+    background-color: rgb(224, 223, 223);
+}
+
+.item__image{
+   margin-right: 15px ;
+}
+
+.item__image img{
+    height: 100%;
+    width: 60px;
+}
+
+.item__infor{
+    text-align: center;
+    display: flex;
+    flex:1;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.item__title{
+    font-weight: 700;
+}
+
+.item__price{
+    font-weight: 400;
+}
+
+.hide{
+    display: none;
+}
+
+.container::-webkit-scrollbar {
+    width: 14px;             /* Chiều rộng vùng chứa scrollbar */
+}
+.container::-webkit-scrollbar-track {
+    background: rgba(204, 204, 204, 0.404); 
+    border-radius: 10px;       /* Màu nền ngoài của thanh scrollbar */
+}
+.container::-webkit-scrollbar-thumb {
+    background-color: #45eee0bb;    /* Màu của thanh cuộn (scroll thumb) */
+    border-radius: 10px;       /* Bo góc scroll thumb */
+    border: 2px solid #ccc;  /* Không hỗ trợ padding, margin, transition nên dùng viền cùng màu nên để padding scroll thumb */
+}
+.container::-webkit-scrollbar-thumb:hover {
+    background-color: #4de79f; /* Hiệu ứng di chuột đổi màu*/
+}

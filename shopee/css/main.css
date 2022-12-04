@@ -189,8 +189,14 @@
 }
 /* Authen modal */
 
+
 .auth-form{
     width: 450px;
+    display:none;
+}
+
+.open{
+    display: block;
 }
 
 .auth-form__container{

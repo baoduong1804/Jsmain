@@ -16,7 +16,7 @@
            
         }
         .navbar{
-            background-color: rgba(43, 208, 214, 0.877);
+            background-color: rgba(32, 32, 32, 0.877);
             display: inline-block;
             height: 100vh;
         }
@@ -26,7 +26,7 @@
             border-bottom:1px solid white;
             font-size: 1.5rem;
             cursor:default;
-            color:blue;
+            color:rgb(0, 255, 21);
             font-weight: 900;
         }
         .nav__list{
@@ -34,11 +34,15 @@
         }
         .nav__item{
             border-bottom:1px solid white;
-            padding:10px 50px 10px;
+            padding:10px 60px 10px;
+            text-align: center;
         }
         .nav__item:hover{
-            background-color:rgba(28, 178, 184, 0.777) ;
+            background-color:rgba(41, 41, 37, 0.777);
             cursor:pointer;
+        }
+        .active{
+            background-color: rgb(61, 48, 231) !important;
         }
     </style>
 </head>
@@ -55,16 +59,16 @@
     </nav>
 </body>
 <script>
-var index =0 ; 
-    for(let i=0;i<5;i++){
-        const navItem = document.querySelectorAll('.nav__item');
+
+const navItem = document.querySelectorAll('.nav__item');
+    for(let i=0;i<navItem.length;i++){  
         navItem[i].onclick = () =>{
-            navItem[i].style.background = 'red';
-            index =i;
+            for(let j=0;j<navItem.length;j++){
+            navItem[j].classList.remove('active')
+        }
+            navItem[i].classList.add('active')         
         }
     }
-
-
 
 </script>
 

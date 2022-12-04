@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css_web/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+
+</head>
+<body>
+<div class="app">
+    <div class="nav open">
+        <header class="nav__header">
+            <div class="nav__header-img">
+                <img src="img/img_5-removebg.png" alt="">
+            </div>
+            <div class="nav__header-title">
+                Tea<span>Milk</span>
+            </div>
+        </header>
+        <div class="nav__container">
+            <ul class="nav__list">
+                <li class="nav__item active">
+                    <i class="fa-solid fa-house-user"></i>
+                    <span>Trang chủ</span>
+                </li>
+                <li class="nav__item">
+                    <i class="fa-solid fa-truck-fast"></i>
+                    <span>Sản phẩm</span>
+                </li>
+                <li class="nav__item">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span>Giỏ hàng</span>
+                </li>
+                <li class="nav__item nav__item-account">
+                    <i class="fa-solid fa-user"></i>
+                    <span>Tài khoản</span>
+                </li>
+                <li class="nav__item">
+                    <i class="fa-solid fa-gear"></i>
+                    <span>Cài đặt</span>
+                </li>
+                <li class="nav__item">
+                    <i class="fa-regular fa-circle-question"></i>
+                    <span>Trợ giúp</span>
+                </li>
+                <li class="nav__item">
+                    <i class="fa-regular fa-comment-dots"></i>
+                    <span>Tin nhắn</span>
+                </li>
+            </ul>
+            <div class="nav__render">
+                <i class="fa-solid fa-arrow-left"></i>
+            </div>
+        </div>
+    </div>
+
+
+   <div class="tea__container">
+        <div class="tea__list">
+            <div class="tea__item">
+                <div class="tea__item-img">
+                    <img src="img/img_1.png" alt="img-tea">
+                </div>
+                <div class="tea__item-content">
+                    <div class="tea__item-title">Trà sữa trân châu</div>
+                    <div class="tea__item-description">
+                        Lorem ipsum dolor sit amet consectetu ssumenda doloribus desscription.
+                    </div>
+                    <div class="tea__item-price">$19.99</div>
+                    <button class="tea__item-add">Add to cart</button>
+                    <div class="tea__item__added">
+                        <div class="tea__item__added-amount">
+                            <button class="amount-minus">
+                                <ion-icon name="remove-outline"></ion-icon>
+                            </button>
+                            <input class="amount-input" type="text" value="">
+                            <button class="amount-plus">+</button>
+                        </div>
+                        <ion-icon class="tea__item__added-delete" name="trash-sharp"></ion-icon>
+                        <input type="checkbox" class="tea__item__added-checkBox">
+                    </div>
+                </div>
+            </div>
+            <div class="tea__item" >
+                <div class="tea__item-img">
+                    <img src="img/img_2.png" alt="img-tea">
+                </div>
+                <div class="tea__item-content">
+                    <div class="tea__item-title">Trà dâu</div>
+                    <div class="tea__item-description">
+                        Lorem ipsum dolor sit amet consectetu ssumenda doloribus desscription.
+                    </div>
+                    <div class="tea__item-price">$24.99</div>
+                    <button class="tea__item-add">Add to cart</button>
+                    <div class="tea__item__added">
+                        <div class="tea__item__added-amount">
+                            <button class="amount-minus">
+                                <ion-icon name="remove-outline"></ion-icon>
+                            </button>
+                            <input class="amount-input" type="text">
+                            <button class="amount-plus">+</button>
+                        </div>
+                        <ion-icon class="tea__item__added-delete" name="trash-sharp"></ion-icon>
+                        <input type="checkbox" class="tea__item__added-checkBox">
+                    </div>
+                </div>
+            </div>
+            <div class="tea__item">
+                <div class="tea__item-img">
+                    <img src="img/img_3.png" alt="img-tea">
+                </div>
+                <div class="tea__item-content">
+                    <div class="tea__item-title">Trà sữa vải</div>
+                    <div class="tea__item-description">
+                        Lorem ipsum dolor sit amet consectetu ssumenda doloribus desscription.
+                    </div>
+                    <div class="tea__item-price">$19.99</div>
+                    <button class="tea__item-add">Add to cart</button>
+                    <div class="tea__item__added">
+                        <div class="tea__item__added-amount">
+                            <button class="amount-minus">
+                                <ion-icon name="remove-outline"></ion-icon>
+                            </button>
+                            <input class="amount-input" type="text">
+                            <button class="amount-plus">+</button>
+                        </div>
+                        <ion-icon class="tea__item__added-delete" name="trash-sharp"></ion-icon>
+                        <input type="checkbox" class="tea__item__added-checkBox">
+                    </div>
+                </div>
+            </div>
+            <div class="tea__item">
+                <div class="tea__item-img">
+                    <img src="img/img_4.png" alt="img-tea">
+                </div>
+                <div class="tea__item-content">
+                    <div class="tea__item-title">Kem phô mai</div>
+                    <div class="tea__item-description">
+                        Lorem ipsum dolor sit amet consectetu ssumenda doloribus desscription.
+                    </div>
+                    <div class="tea__item-price">$22.99</div>
+                    <button class="tea__item-add">Add to cart</button>
+                    <div class="tea__item__added">
+                        <div class="tea__item__added-amount">
+                            <button class="amount-minus">
+                                <ion-icon name="remove-outline"></ion-icon>
+                            </button>
+                            <input class="amount-input" type="text">
+                            <button class="amount-plus">+</button>
+                        </div>
+                        <ion-icon class="tea__item__added-delete" name="trash-sharp"></ion-icon>
+                        <input type="checkbox" class="tea__item__added-checkBox">
+                    </div>
+                </div>
+            </div>
+            <div class="tea__item">
+                <div class="tea__item-img">
+                    <img src="img/img_5.png" alt="img-tea">
+                </div>
+                <div class="tea__item-content">
+                    <div class="tea__item-title">Trà sữa thạch</div>
+                    <div class="tea__item-description">
+                        Lorem ipsum dolor sit amet consectetu ssumenda doloribus desscription.
+                    </div>
+                    <div class="tea__item-price">$17.99</div>
+                    <button class="tea__item-add">Add to cart</button>
+                    <div class="tea__item__added">
+                        <div class="tea__item__added-amount">
+                            <button class="amount-minus">
+                                <ion-icon name="remove-outline"></ion-icon>
+                            </button>
+                            <input class="amount-input" type="text">
+                            <button class="amount-plus">+</button>
+                        </div>
+                        <ion-icon class="tea__item__added-delete" name="trash-sharp"></ion-icon>
+                        <input type="checkbox" class="tea__item__added-checkBox">
+                    </div>
+                </div>
+            </div>
+            <div class="tea__item">
+                <div class="tea__item-img">
+                    <img src="img/img_1.png" alt="img-tea">
+                </div>
+                <div class="tea__item-content">
+                    <div class="tea__item-title">Trà sữa trân châu</div>
+                    <div class="tea__item-description">
+                        Lorem ipsum dolor sit amet consectetu ssumenda doloribus desscription.
+                    </div>
+                    <div class="tea__item-price">$19.99</div>
+                    <button class="tea__item-add">Add to cart</button>
+                    <div class="tea__item__added">
+                        <div class="tea__item__added-amount">
+                            <button class="amount-minus">
+                                <ion-icon name="remove-outline"></ion-icon>
+                            </button>
+                            <input class="amount-input" type="text">
+                            <button class="amount-plus">+</button>
+                        </div>
+                        <ion-icon class="tea__item__added-delete" name="trash-sharp"></ion-icon>
+                        <input type="checkbox" class="tea__item__added-checkBox">
+                    </div>
+                </div>
+            </div>
+            <div class="tea__item" >
+                <div class="tea__item-img">
+                    <img src="img/img_2.png" alt="img-tea">
+                </div>
+                <div class="tea__item-content">
+                    <div class="tea__item-title">Trà dâu</div>
+                    <div class="tea__item-description">
+                        Lorem ipsum dolor sit amet consectetu ssumenda doloribus desscription.
+                    </div>
+                    <div class="tea__item-price">$24.99</div>
+                    <button class="tea__item-add">Add to cart</button>
+                    <div class="tea__item__added">
+                        <div class="tea__item__added-amount">
+                            <button class="amount-minus">
+                                <ion-icon name="remove-outline"></ion-icon>
+                            </button>
+                            <input class="amount-input" type="text">
+                            <button class="amount-plus">+</button>
+                        </div>
+                        <ion-icon class="tea__item__added-delete" name="trash-sharp"></ion-icon>
+                        <input type="checkbox" class="tea__item__added-checkBox">
+                    </div>
+                </div>
+            </div>
+            <div class="tea__item" >
+                <div class="tea__item-img">
+                    <img src="img/img_3.png" alt="img-tea">
+                </div>
+                <div class="tea__item-content">
+                    <div class="tea__item-title">Trà sữa vải</div>
+                    <div class="tea__item-description">
+                        Lorem ipsum dolor sit amet consectetu ssumenda doloribus desscription.
+                    </div>
+                    <div class="tea__item-price">$19.99</div>
+                    <button class="tea__item-add">Add to cart</button>
+                    <div class="tea__item__added">
+                        <div class="tea__item__added-amount">
+                            <button class="amount-minus">
+                                <ion-icon name="remove-outline"></ion-icon>
+                            </button>
+                            <input class="amount-input" type="text">
+                            <button class="amount-plus">+</button>
+                        </div>
+                        <ion-icon class="tea__item__added-delete" name="trash-sharp"></ion-icon>
+                        <input type="checkbox" class="tea__item__added-checkBox">
+                    </div>
+                </div>
+            </div>
+            <div class="tea__item" >
+                <div class="tea__item-img">
+                    <img src="img/img_4.png" alt="img-tea">
+                </div>
+                <div class="tea__item-content">
+                    <div class="tea__item-title">Kem phô mai</div>
+                    <div class="tea__item-description">
+                        Lorem ipsum dolor sit amet consectetu ssumenda doloribus desscription.
+                    </div>
+                    <div class="tea__item-price">$22.99</div>
+                    <button class="tea__item-add">Add to cart</button>
+                    <div class="tea__item__added">
+                        <div class="tea__item__added-amount">
+                            <button class="amount-minus">
+                                <ion-icon name="remove-outline"></ion-icon>
+                            </button>
+                            <input class="amount-input" type="text">
+                            <button class="amount-plus">+</button>
+                        </div>
+                        <ion-icon class="tea__item__added-delete" name="trash-sharp"></ion-icon>
+                        <input type="checkbox" class="tea__item__added-checkBox">
+                    </div>
+                </div>
+            </div>
+            <div class="tea__item" >
+                <div class="tea__item-img">
+                    <img src="img/img_5.png" alt="img-tea">
+                </div>
+                <div class="tea__item-content">
+                    <div class="tea__item-title">Trà sữa thạch</div>
+                    <div class="tea__item-description">
+                        Lorem ipsum dolor sit amet consectetu ssumenda doloribus desscription.
+                    </div>
+                    <div class="tea__item-price">$17.99</div>
+                    <button class="tea__item-add">Add to cart</button>
+                    <div class="tea__item__added">
+                        <div class="tea__item__added-amount">
+                            <button class="amount-minus">
+                                <ion-icon name="remove-outline"></ion-icon>
+                            </button>
+                            <input class="amount-input" type="text">
+                            <button class="amount-plus">+</button>
+                        </div>
+                        <ion-icon class="tea__item__added-delete" name="trash-sharp"></ion-icon>
+                        <input type="checkbox" class="tea__item__added-checkBox">
+                    </div>
+                </div>
+            </div>
+            <div class="tea__item" >
+                <div class="tea__item-img">
+                    <img src="img/img_1.png" alt="img-tea">
+                </div>
+                <div class="tea__item-content">
+                    <div class="tea__item-title">Trà sữa trân châu</div>
+                    <div class="tea__item-description">
+                        Lorem ipsum dolor sit amet consectetu ssumenda doloribus desscription.
+                    </div>
+                    <div class="tea__item-price">$19.99</div>
+                    <button class="tea__item-add">Add to cart</button>
+                    <div class="tea__item__added">
+                        <div class="tea__item__added-amount">
+                            <button class="amount-minus">
+                                <ion-icon name="remove-outline"></ion-icon>
+                            </button>
+                            <input class="amount-input" type="text">
+                            <button class="amount-plus">+</button>
+                        </div>
+                        <ion-icon class="tea__item__added-delete" name="trash-sharp"></ion-icon>
+                        <input type="checkbox" class="tea__item__added-checkBox">
+                    </div>
+                </div>
+            </div>
+            <div class="tea__item" >
+                <div class="tea__item-img">
+                    <img src="img/img_2.png" alt="img-tea">
+                </div>
+                <div class="tea__item-content">
+                    <div class="tea__item-title">Trà dâu</div>
+                    <div class="tea__item-description">
+                        Lorem ipsum dolor sit amet consectetu ssumenda doloribus desscription.
+                    </div>
+                    <div class="tea__item-price">$24.99</div>
+                    <button class="tea__item-add">Add to cart</button>
+                    <div class="tea__item__added">
+                        <div class="tea__item__added-amount">
+                            <button class="amount-minus">
+                                <ion-icon name="remove-outline"></ion-icon>
+                            </button>
+                            <input class="amount-input" type="text">
+                            <button class="amount-plus">+</button>
+                        </div>
+                        <ion-icon class="tea__item__added-delete" name="trash-sharp"></ion-icon>
+                        <input type="checkbox" class="tea__item__added-checkBox">
+                    </div>
+                </div>
+            </div>
+            <div class="tea__item" >
+                <div class="tea__item-img">
+                    <img src="img/img_3.png" alt="img-tea">
+                </div>
+                <div class="tea__item-content">
+                    <div class="tea__item-title">Trà sữa vải</div>
+                    <div class="tea__item-description">
+                        Lorem ipsum dolor sit amet consectetu ssumenda doloribus desscription.
+                    </div>
+                    <div class="tea__item-price">$19.99</div>
+                    <button class="tea__item-add">Add to cart</button>
+                    <div class="tea__item__added">
+                        <div class="tea__item__added-amount">
+                            <button class="amount-minus">
+                                <ion-icon name="remove-outline"></ion-icon>
+                            </button>
+                            <input class="amount-input" type="text">
+                            <button class="amount-plus">+</button>
+                        </div>
+                        <ion-icon class="tea__item__added-delete" name="trash-sharp"></ion-icon>
+                        <input type="checkbox" class="tea__item__added-checkBox">
+                    </div>
+                </div>
+            </div>
+            <div class="tea__item" >
+                <div class="tea__item-img">
+                    <img src="img/img_4.png" alt="img-tea">
+                </div>
+                <div class="tea__item-content">
+                    <div class="tea__item-title">Kem phô mai</div>
+                    <div class="tea__item-description">
+                        Lorem ipsum dolor sit amet consectetu ssumenda doloribus desscription.
+                    </div>
+                    <div class="tea__item-price">$22.99</div>
+                    <button class="tea__item-add">Add to cart</button>
+                    <div class="tea__item__added">
+                        <div class="tea__item__added-amount">
+                            <button class="amount-minus">
+                                <ion-icon name="remove-outline"></ion-icon>
+                            </button>
+                            <input class="amount-input" type="text">
+                            <button class="amount-plus">+</button>
+                        </div>
+                        <ion-icon class="tea__item__added-delete" name="trash-sharp"></ion-icon>
+                        <input type="checkbox" class="tea__item__added-checkBox">
+                    </div>
+                </div>
+            </div>
+            <div class="tea__item" >
+                <div class="tea__item-img">
+                    <img src="img/img_5.png" alt="img-tea">
+                </div>
+                <div class="tea__item-content">
+                    <div class="tea__item-title">Trà sữa thạch</div>
+                    <div class="tea__item-description">
+                        Lorem ipsum dolor sit amet consectetu ssumenda doloribus desscription.
+                    </div>
+                    <div class="tea__item-price">$17.99</div>
+                    <button class="tea__item-add">Add to cart</button>
+                    <div class="tea__item__added">
+                        <div class="tea__item__added-amount">
+                            <button class="amount-minus">
+                                <ion-icon name="remove-outline"></ion-icon>
+                            </button>
+                            <input class="amount-input" type="text">
+                            <button class="amount-plus">+</button>
+                        </div>
+                        <ion-icon class="tea__item__added-delete" name="trash-sharp"></ion-icon>
+                        <input type="checkbox" class="tea__item__added-checkBox">
+                    </div>
+                </div>
+            </div>
+            <div class="tea__item" >
+                <div class="tea__item-img">
+                    <img src="img/img_1.png" alt="img-tea">
+                </div>
+                <div class="tea__item-content">
+                    <div class="tea__item-title">Trà sữa trân châu</div>
+                    <div class="tea__item-description">
+                        Lorem ipsum dolor sit amet consectetu ssumenda doloribus desscription.
+                    </div>
+                    <div class="tea__item-price">$19.99</div>
+                    <button class="tea__item-add">Add to cart</button>
+                    <div class="tea__item__added">
+                        <div class="tea__item__added-amount">
+                            <button class="amount-minus">
+                                <ion-icon name="remove-outline"></ion-icon>
+                            </button>
+                            <input class="amount-input" type="text">
+                            <button class="amount-plus">+</button>
+                        </div>
+                        <ion-icon class="tea__item__added-delete" name="trash-sharp"></ion-icon>
+                        <input type="checkbox" class="tea__item__added-checkBox">
+                    </div>
+                </div>
+            </div>
+            <div class="tea__item" >
+                <div class="tea__item-img">
+                    <img src="img/img_2.png" alt="img-tea">
+                </div>
+                <div class="tea__item-content">
+                    <div class="tea__item-title">Trà dâu</div>
+                    <div class="tea__item-description">
+                        Lorem ipsum dolor sit amet consectetu ssumenda doloribus desscription.
+                    </div>
+                    <div class="tea__item-price">$24.99</div>
+                    <button class="tea__item-add">Add to cart</button>
+                    <div class="tea__item__added">
+                        <div class="tea__item__added-amount">
+                            <button class="amount-minus">
+                                <ion-icon name="remove-outline"></ion-icon>
+                            </button>
+                            <input class="amount-input" type="text">
+                            <button class="amount-plus">+</button>
+                        </div>
+                        <ion-icon class="tea__item__added-delete" name="trash-sharp"></ion-icon>
+                        <input type="checkbox" class="tea__item__added-checkBox">
+                    </div>
+                </div>
+            </div>
+            <div class="tea__item" >
+                <div class="tea__item-img">
+                    <img src="img/img_3.png" alt="img-tea">
+                </div>
+                <div class="tea__item-content">
+                    <div class="tea__item-title">Trà sữa vải</div>
+                    <div class="tea__item-description">
+                        Lorem ipsum dolor sit amet consectetu ssumenda doloribus desscription.
+                    </div>
+                    <div class="tea__item-price">$19.99</div>
+                    <button class="tea__item-add">Add to cart</button>
+                    <div class="tea__item__added">
+                        <div class="tea__item__added-amount">
+                            <button class="amount-minus">
+                                <ion-icon name="remove-outline"></ion-icon>
+                            </button>
+                            <input class="amount-input" type="text">
+                            <button class="amount-plus">+</button>
+                        </div>
+                        <ion-icon class="tea__item__added-delete" name="trash-sharp"></ion-icon>
+                        <input type="checkbox" class="tea__item__added-checkBox">
+                    </div>
+                </div>
+            </div>
+            <div class="tea__item" >
+                <div class="tea__item-img">
+                    <img src="img/img_4.png" alt="img-tea">
+                </div>
+                <div class="tea__item-content">
+                    <div class="tea__item-title">Kem phô mai</div>
+                    <div class="tea__item-description">
+                        Lorem ipsum dolor sit amet consectetu ssumenda doloribus desscription.
+                    </div>
+                    <div class="tea__item-price">$22.99</div>
+                    <button class="tea__item-add">Add to cart</button>
+                    <div class="tea__item__added">
+                        <div class="tea__item__added-amount">
+                            <button class="amount-minus">
+                                <ion-icon name="remove-outline"></ion-icon>
+                            </button>
+                            <input class="amount-input" type="text">
+                            <button class="amount-plus">+</button>
+                        </div>
+                        <ion-icon class="tea__item__added-delete" name="trash-sharp"></ion-icon>
+                        <input type="checkbox" class="tea__item__added-checkBox">
+                    </div>
+                </div>
+            </div>
+            <div class="tea__item" >
+                <div class="tea__item-img">
+                    <img src="img/img_5.png" alt="img-tea">
+                </div>
+                <div class="tea__item-content">
+                    <div class="tea__item-title">Trà sữa thạch</div>
+                    <div class="tea__item-description">
+                        Lorem ipsum dolor sit amet consectetu ssumenda doloribus desscription.
+                    </div>
+                    <div class="tea__item-price">$17.99</div>
+                    <button class="tea__item-add">Add to cart</button>
+                    <div class="tea__item__added">
+                        <div class="tea__item__added-amount">
+                            <button class="amount-minus">
+                                <ion-icon name="remove-outline"></ion-icon>
+                            </button>
+                            <input class="amount-input" type="text">
+                            <button class="amount-plus">+</button>
+                        </div>
+                        <ion-icon class="tea__item__added-delete" name="trash-sharp"></ion-icon>
+                        <input type="checkbox" class="tea__item__added-checkBox">
+                    </div>
+                </div>
+            </div>
+            <div class="tea__item" >
+                <div class="tea__item-img">
+                    <img src="img/img_1.png" alt="img-tea">
+                </div>
+                <div class="tea__item-content">
+                    <div class="tea__item-title">Trà sữa trân châu</div>
+                    <div class="tea__item-description">
+                        Lorem ipsum dolor sit amet consectetu ssumenda doloribus desscription.
+                    </div>
+                    <div class="tea__item-price">$19.99</div>
+                    <button class="tea__item-add">Add to cart</button>
+                    <div class="tea__item__added">
+                        <div class="tea__item__added-amount">
+                            <button class="amount-minus">
+                                <ion-icon name="remove-outline"></ion-icon>
+                            </button>
+                            <input class="amount-input" type="text">
+                            <button class="amount-plus">+</button>
+                        </div>
+                        <ion-icon class="tea__item__added-delete" name="trash-sharp"></ion-icon>
+                        <input type="checkbox" class="tea__item__added-checkBox">
+                    </div>
+                </div>
+            </div>
+            <div class="tea__item" >
+                <div class="tea__item-img">
+                    <img src="img/img_2.png" alt="img-tea">
+                </div>
+                <div class="tea__item-content">
+                    <div class="tea__item-title">Trà dâu</div>
+                    <div class="tea__item-description">
+                        Lorem ipsum dolor sit amet consectetu ssumenda doloribus desscription.
+                    </div>
+                    <div class="tea__item-price">$24.99</div>
+                    <button class="tea__item-add">Add to cart</button>
+                    <div class="tea__item__added">
+                        <div class="tea__item__added-amount">
+                            <button class="amount-minus">
+                                <ion-icon name="remove-outline"></ion-icon>
+                            </button>
+                            <input class="amount-input" type="text">
+                            <button class="amount-plus">+</button>
+                        </div>
+                        <ion-icon class="tea__item__added-delete" name="trash-sharp"></ion-icon>
+                        <input type="checkbox" class="tea__item__added-checkBox">
+                    </div>
+                </div>
+            </div>
+            <div class="tea__item" >
+                <div class="tea__item-img">
+                    <img src="img/img_3.png" alt="img-tea">
+                </div>
+                <div class="tea__item-content">
+                    <div class="tea__item-title">Trà sữa vải</div>
+                    <div class="tea__item-description">
+                        Lorem ipsum dolor sit amet consectetu ssumenda doloribus desscription.
+                    </div>
+                    <div class="tea__item-price">$19.99</div>
+                    <button class="tea__item-add">Add to cart</button>
+                    <div class="tea__item__added">
+                        <div class="tea__item__added-amount">
+                            <button class="amount-minus">
+                                <ion-icon name="remove-outline"></ion-icon>
+                            </button>
+                            <input class="amount-input" type="text">
+                            <button class="amount-plus">+</button>
+                        </div>
+                        <ion-icon class="tea__item__added-delete" name="trash-sharp"></ion-icon>
+                        <input type="checkbox" class="tea__item__added-checkBox">
+                    </div>
+                </div>
+            </div>
+            <div class="tea__item" >
+                <div class="tea__item-img">
+                    <img src="img/img_4.png" alt="img-tea">
+                </div>
+                <div class="tea__item-content">
+                    <div class="tea__item-title">Kem phô mai</div>
+                    <div class="tea__item-description">
+                        Lorem ipsum dolor sit amet consectetu ssumenda doloribus desscription.
+                    </div>
+                    <div class="tea__item-price">$22.99</div>
+                    <button class="tea__item-add">Add to cart</button>
+                    <div class="tea__item__added">
+                        <div class="tea__item__added-amount">
+                            <button class="amount-minus">
+                                <ion-icon name="remove-outline"></ion-icon>
+                            </button>
+                            <input class="amount-input" type="text">
+                            <button class="amount-plus">+</button>
+                        </div>
+                        <ion-icon class="tea__item__added-delete" name="trash-sharp"></ion-icon>
+                        <input type="checkbox" class="tea__item__added-checkBox">
+                    </div>
+                </div>
+            </div>
+            <div class="tea__item" >
+                <div class="tea__item-img">
+                    <img src="img/img_5.png" alt="img-tea">
+                </div>
+                <div class="tea__item-content">
+                    <div class="tea__item-title">Trà sữa thạch</div>
+                    <div class="tea__item-description">
+                        Lorem ipsum dolor sit amet consectetu ssumenda doloribus desscription.
+                    </div>
+                    <div class="tea__item-price">$17.99</div>
+                    <button class="tea__item-add">Add to cart</button>
+                    <div class="tea__item__added">
+                        <div class="tea__item__added-amount">
+                            <button class="amount-minus">
+                                <ion-icon name="remove-outline"></ion-icon>
+                            </button>
+                            <input class="amount-input" type="text">
+                            <button class="amount-plus">+</button>
+                        </div>
+                        <ion-icon class="tea__item__added-delete" name="trash-sharp"></ion-icon>
+                        <input type="checkbox" class="tea__item__added-checkBox">
+                    </div>
+                </div>
+            </div>
+            <div class="tea__item" >
+                <div class="tea__item-img">
+                    <img src="img/img_1.png" alt="img-tea">
+                </div>
+                <div class="tea__item-content">
+                    <div class="tea__item-title">Trà sữa trân châu</div>
+                    <div class="tea__item-description">
+                        Lorem ipsum dolor sit amet consectetu ssumenda doloribus desscription.
+                    </div>
+                    <div class="tea__item-price">$19.99</div>
+                    <button class="tea__item-add">Add to cart</button>
+                    <div class="tea__item__added">
+                        <div class="tea__item__added-amount">
+                            <button class="amount-minus">
+                                <ion-icon name="remove-outline"></ion-icon>
+                            </button>
+                            <input class="amount-input" type="text">
+                            <button class="amount-plus">+</button>
+                        </div>
+                        <ion-icon class="tea__item__added-delete" name="trash-sharp"></ion-icon>
+                        <input type="checkbox" class="tea__item__added-checkBox">
+                    </div>
+                </div>
+            </div>
+            <div class="tea__item" >
+                <div class="tea__item-img">
+                    <img src="img/img_2.png" alt="img-tea">
+                </div>
+                <div class="tea__item-content">
+                    <div class="tea__item-title">Trà dâu</div>
+                    <div class="tea__item-description">
+                        Lorem ipsum dolor sit amet consectetu ssumenda doloribus desscription.
+                    </div>
+                    <div class="tea__item-price">$24.99</div>
+                    <button class="tea__item-add">Add to cart</button>
+                    <div class="tea__item__added">
+                        <div class="tea__item__added-amount">
+                            <button class="amount-minus">
+                                <ion-icon name="remove-outline"></ion-icon>
+                            </button>
+                            <input class="amount-input" type="text">
+                            <button class="amount-plus">+</button>
+                        </div>
+                        <ion-icon class="tea__item__added-delete" name="trash-sharp"></ion-icon>
+                        <input type="checkbox" class="tea__item__added-checkBox">
+                    </div>
+                </div>
+            </div>
+            <div class="tea__item" >
+                <div class="tea__item-img">
+                    <img src="img/img_3.png" alt="img-tea">
+                </div>
+                <div class="tea__item-content">
+                    <div class="tea__item-title">Trà sữa vải</div>
+                    <div class="tea__item-description">
+                        Lorem ipsum dolor sit amet consectetu ssumenda doloribus desscription.
+                    </div>
+                    <div class="tea__item-price">$19.99</div>
+                    <button class="tea__item-add">Add to cart</button>
+                    <div class="tea__item__added">
+                        <div class="tea__item__added-amount">
+                            <button class="amount-minus">
+                                <ion-icon name="remove-outline"></ion-icon>
+                            </button>
+                            <input class="amount-input" type="text">
+                            <button class="amount-plus">+</button>
+                        </div>
+                        <ion-icon class="tea__item__added-delete" name="trash-sharp"></ion-icon>
+                        <input type="checkbox" class="tea__item__added-checkBox">
+                    </div>
+                </div>
+            </div>
+            <div class="tea__item" >
+                <div class="tea__item-img">
+                    <img src="img/img_4.png" alt="img-tea">
+                </div>
+                <div class="tea__item-content">
+                    <div class="tea__item-title">Kem phô mai</div>
+                    <div class="tea__item-description">
+                        Lorem ipsum dolor sit amet consectetu ssumenda doloribus desscription.
+                    </div>
+                    <div class="tea__item-price">$22.99</div>
+                    <button class="tea__item-add">Add to cart</button>
+                    <div class="tea__item__added">
+                        <div class="tea__item__added-amount">
+                            <button class="amount-minus">
+                                <ion-icon name="remove-outline"></ion-icon>
+                            </button>
+                            <input class="amount-input" type="text">
+                            <button class="amount-plus">+</button>
+                        </div>
+                        <ion-icon class="tea__item__added-delete" name="trash-sharp"></ion-icon>
+                        <input type="checkbox" class="tea__item__added-checkBox">
+                    </div>
+                </div>
+            </div>
+            <div class="tea__item" >
+                <div class="tea__item-img">
+                    <img src="img/img_5.png" alt="img-tea">
+                </div>
+                <div class="tea__item-content">
+                    <div class="tea__item-title">Trà sữa thạch</div>
+                    <div class="tea__item-description">
+                        Lorem ipsum dolor sit amet consectetu ssumenda doloribus desscription.
+                    </div>
+                    <div class="tea__item-price">$17.99</div>
+                    <button class="tea__item-add">Add to cart</button>
+                    <div class="tea__item__added">
+                        <div class="tea__item__added-amount">
+                            <button class="amount-minus">
+                                <ion-icon name="remove-outline"></ion-icon>
+                            </button>
+                            <input class="amount-input" type="text">
+                            <button class="amount-plus">+</button>
+                        </div>
+                        <ion-icon class="tea__item__added-delete" name="trash-sharp"></ion-icon>
+                        <input type="checkbox" class="tea__item__added-checkBox">
+                    </div>
+                </div>
+            </div>
+                <!--ListPase-->
+            <div class="tea__listPage"></div>
+
+        </div>
+
+
+<!--Giỏ hàng-->    
+    <div class="tea__icon-cart">
+        <span class="tea__icon-title">Giỏ hàng</span>
+        <ion-icon name="cart-outline"></ion-icon>
+        <div class="tea__icon-cart-number">0</div>
+    </div>
+   </div>
+   <div class="tea__cart">
+        <header class="tea__cart-header">
+            <span>CART</span>
+            <ion-icon class ="tea__cart-close" name="close-outline"></ion-icon>
+        </header>
+
+        <div class="tea__cart-container">
+            
+        </div>
+
+        <footer class="tea__cart-footer">
+            <div class="tea__cart-priceAll">
+                <span>Tổng thanh toán</span>
+                <span class="tea__cart-priceAll-price">$100.00</span>
+            </div>
+            <div class="tea__cart-checkAll">
+                <span>Tất cả</span>
+                <input type="checkbox">
+            </div>
+            <button class="tea__cart-btn">Mua hàng</button>
+        </footer>
+     </div>
+     <div class="modal"></div>
+     <div class="modal-form">
+        <form action="" class="form">
+            <header class="form__header">
+                <div class="form__header-img">
+                    <img src="img/img_6-removebg.png" alt="img6">
+                </div>
+                <div class="form__header-title">User login</div>
+            </header>
+            <div class="form__container">
+                <div class="form__container-inputBox">
+                    <input type="text" id="input" class="form__container-input">
+                    <label for="input" class="form__container-input-title">Email</label>
+                </div>
+                <div class="form__container-passwordBox">
+                    <input type="password" id="password" class="form__container-password">
+                    <label for="password" class="form__container-input-title">Mật khẩu</label>
+                </div>
+                <div class="form__container-forget-password">Quên mật khẩu?</div>
+                <div class="form__container-button">
+                    <button class="button-register">Đăng ký</button>
+                    <button class="button-login">Đăng nhập</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    
+</div>
+</body>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<script src="main.js"></script>
+</html>

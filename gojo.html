@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+body{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   min-height: 100vh;
+}
+.container{
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border:1px solid black;
+    border-radius:50%;
+    background-image: conic-gradient(red 0%,red 120deg,yellow 120deg,yellow 240deg,green 240deg);
+}
+.container span{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /* transform-origin: left; */
+}
+.container span:nth-child(1){
+    transform: rotate(120deg);
+}
+</style>
+</head>
+
+<body>
+    <div class="container">
+        <span>item1</span>
+        <span>item2</span>
+        <span>item3</span>
+    </div>
+</body>
+</html>

@@ -84,6 +84,7 @@ html{
     right: 0;
     display: flex;
     animation:fadeIn 0.1s linear;
+    display: none;
 }
 
 .modal__overlay{

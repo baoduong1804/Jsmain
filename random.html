@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="name">Nhập tên</label>
+    <input type="text" id="name">
+    <h3>người được chọn</h3>
+    <div class="container"></div>
+    <button class="button">Random</button>
+    <div class="boxResult"></div>
+    <!-- <button class="delete">x</button> -->
+<script>
+    const input = document.getElementById('name');
+    const container = document.querySelector('.container');
+    const button = document.querySelector('.button');
+    const boxResult = document.querySelector('.boxResult');
+    const deleteBtn = document.querySelector('.delete');
+    var box = []
+    input.onchange = (e)=>{
+        let div = document.createElement('div');
+        div.innerText = e.target.value
+        box.push(e.target.value);
+        container.appendChild(div);
+        input.value = ''
+    }
+
+    button.onclick = () =>{
+        let div2 = document.createElement('div');
+        let result = Math.floor(Math.random()*box.length);
+        div2.innerText = box[result]
+        boxResult.appendChild(div2);
+    }
+</script>
+</html>
