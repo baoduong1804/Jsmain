@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Document</title>
+    <title>Tea Milk</title>
     <link rel="stylesheet" href="./css_web/main.css">
+    <link rel="stylesheet" href="css_web/resposive.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
-
 </head>
 <body>
 <div class="app">
@@ -46,7 +46,7 @@
                     <i class="fa-regular fa-circle-question"></i>
                     <span>Trợ giúp</span>
                 </li>
-                <li class="nav__item">
+                <li class="nav__item nav__item--commet">
                     <i class="fa-regular fa-comment-dots"></i>
                     <span>Tin nhắn</span>
                 </li>
@@ -56,7 +56,6 @@
             </div>
         </div>
     </div>
-
 
    <div class="tea__container">
         <div class="tea__list">
@@ -817,12 +816,12 @@
      </div>
      <div class="modal"></div>
      <div class="modal-form">
-        <form action="" class="form">
+        <form action="" class="form form--login form--active">
             <header class="form__header">
                 <div class="form__header-img">
                     <img src="img/img_6-removebg.png" alt="img6">
                 </div>
-                <div class="form__header-title">User login</div>
+                <div class="form__header-title">Đăng nhập</div>
             </header>
             <div class="form__container">
                 <div class="form__container-inputBox">
@@ -836,12 +835,58 @@
                 <div class="form__container-forget-password">Quên mật khẩu?</div>
                 <div class="form__container-button">
                     <button class="button-register">Đăng ký</button>
+                    <button class="button-login btn--active">Đăng nhập</button>
+                </div>
+                <div class="form__container-socials">
+                    <a href="#" class="form__container-link-fb">        
+                        <i class="fa-brands fa-facebook" class="socials-fb-icon"></i>
+                        <div class="socials-fb-title">Kết nối Facebook</div>
+                    </a>
+                    <a href="#" class="form__container-link-google">        
+                        <i class="fa-brands fa-google" class="socials-google-icon"></i>
+                        <div class="socials-google-title">Kết nối Google</div>
+                    </a>
+                </div>
+            </div>
+        </form>
+        <form action="" class="form form--register">
+            <header class="form__header">
+                <div class="form__header-img">
+                    <img src="img/img_7-removebg.png" alt="img6">
+                </div>
+                <div class="form__header-title">Đăng ký</div>
+            </header>
+            <div class="form__container">
+                <div class="form__container-inputBox">
+                    <input type="text" id="input-register" class="form__container-input">
+                    <label for="input-register" class="form__container-input-title">Email</label>
+                </div>
+                <div class="form__container-passwordBox">
+                    <input type="password" id="password-register" class="form__container-password">
+                    <label for="password-register" class="form__container-input-title">Mật khẩu</label>
+                </div>
+                <div class="form__container-passwordBox">
+                    <input type="password" id="password2-register" class="form__container-password">
+                    <label for="password2-register" class="form__container-input-title">Nhập lại mật khẩu</label>
+                </div>
+                <!-- <div class="form__container-forget-password">Quên mật khẩu?</div> -->
+                <div class="form__container-button">
+                    <button class="button-register btn--active">Đăng ký</button>
                     <button class="button-login">Đăng nhập</button>
+                </div>
+                <div class="form__container-socials">
+                    <a href="#" class="form__container-link-fb">        
+                        <i class="fa-brands fa-facebook" class="socials-fb-icon"></i>
+                        <div class="socials-fb-title">Kết nối Facebook</div>
+                    </a>
+                    <a href="#" class="form__container-link-google">        
+                        <i class="fa-brands fa-google" class="socials-google-icon"></i>
+                        <div class="socials-google-title">Kết nối Google</div>
+                    </a>
                 </div>
             </div>
         </form>
     </div>
-    
 </div>
 </body>
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>

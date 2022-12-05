@@ -9,8 +9,23 @@ const navBar = document.querySelector('.nav');
 const accountBtn = document.querySelector('.nav__item-account');
 const modalForm = document.querySelector('.modal-form');
 const modal = document.querySelector('.modal');
-const inputLogin = document.querySelector('.form__container-input');
-const passwordLogin = document.querySelector('.form__container-password');
+const inputLogin = document.querySelectorAll('.form__container-input');
+const passwordLogin = document.querySelectorAll('.form__container-password');
+const registerBtn = document.querySelectorAll('.button-register');
+const loginBtn = document.querySelectorAll('.button-login');
+const formLogin = document.querySelector('.form--login');
+const formRegister = document.querySelector('.form--register');
+
+for(let i=0;i<2;i++){
+    registerBtn[i].onclick = ()=>{
+        formLogin.classList.remove('form--active')
+        formRegister.classList.add('form--active')
+    }
+    loginBtn[i].onclick = ()=>{
+        formRegister.classList.remove('form--active')
+        formLogin.classList.add('form--active')
+    }
+}
 
 let thisPage = 1;
 const limit = 6;
@@ -179,20 +194,26 @@ modal.onclick = ()=>{
     modalForm.style.display ='none';
 }
 
-inputLogin.onchange = e =>{
-    if(e.target.value !== ''){
-        inputLogin.classList.add('has-value')
-    }else{
-        inputLogin.classList.remove('has-value')
+for(let i=0;i<inputLogin.length;i++){
+    inputLogin[i].onchange = e =>{
+        if(e.target.value.trim() !== ''){
+            inputLogin[i].classList.add('has-value')
+        }else{
+            inputLogin[i].classList.remove('has-value')
+        }
+    }
+}
+for(let i=0;i<passwordLogin.length;i++){
+    passwordLogin[i].onchange = e =>{
+        if(e.target.value !== ''){
+            passwordLogin[i].classList.add('has-value')
+        }else{
+            passwordLogin[i].classList.remove('has-value')
+        }
     }
 }
 
-passwordLogin.onchange = e =>{
-    if(e.target.value !== ''){
-        passwordLogin.classList.add('has-value')
-    }else{
-        passwordLogin.classList.remove('has-value')
-    }
-}
+
+
 
 

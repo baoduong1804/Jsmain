@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Lobster&family=Poppins&family=Roboto:wght@300;400;500;700&display=swap');
 :root{
     --btn-color:rgba(255, 0, 0, 0.8);
-    --form-color:#00BCD4;
+    --form-color:#0077ff;
 }
 
 *{
@@ -18,7 +18,6 @@ body{
 }
 .tea__container{
     position: relative;
-    
 }
 
 .tea__list{
@@ -52,7 +51,6 @@ body{
 
 .tea__item-img img:hover{
     transform: translateY(-30px);
-    
 }
 
 .tea__item-content{
@@ -126,10 +124,10 @@ body{
 
 .tea__cart{
     position: absolute;
-    top:10px;
+    top:0px;
     right:0px;
     z-index: 50;
-    height: 600px;
+    height: 100vh;
     background-color: white;
     border-radius: 10px 0 0 10px;
     width: 300px;
@@ -154,7 +152,7 @@ body{
     padding:8px;
     font-family: 'Dancing Script', cursive;
     text-align: center;
-    height: 50px;
+    height: 8%;
 }
 .tea__cart-header span{
     font-size: 1.5rem;
@@ -210,13 +208,14 @@ body{
 }
 
 .tea__cart-container{
-    padding:10px;
+    padding:20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     height: 84%;
     overflow: auto;
 }
+
 .add{
     background-color: aquamarine;
 }
@@ -242,6 +241,7 @@ body{
 
 .tea__cart-footer{
     display: flex;
+    height: 8%;
     flex:1;
     justify-content: space-between;
     border-radius: 0 0 0 10px;
@@ -253,7 +253,7 @@ body{
     display: flex;
     flex-direction: column;
     margin: 3px 15px 0px;
-   
+    justify-content: center;
 }
 
 .tea__cart-priceAll:nth-child(1){
@@ -345,7 +345,7 @@ body{
     width: 66px;
     color: black;
     background-color: rgba(255, 255, 255, 0.933);
-    z-index: 100;
+    z-index: 50;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.459);
     transition: 0.4s;
 }
@@ -485,8 +485,9 @@ body{
 .modal{
     position:fixed;
     inset:0;
-    background-color: rgba(0, 0, 0, 0.575);
+    background-color: rgba(0, 0, 0, 0.7);
     z-index: 100;
+    cursor: pointer;
     display: none;
 }
 
@@ -502,10 +503,11 @@ body{
 .form{
     background-color: white;
     width: 360px;
-    height: 400px;
+    height: 445px;
     color: black;
     border-radius: 15px;
-    padding: 0 50px 0;
+    padding: 0 40px 0px;
+    display: none;
 }
 
 .form__header{
@@ -515,16 +517,17 @@ body{
 
 .form__header-img{
    height: 150px;
-   transform: translateY(-56px);
 }
 
 .form__header-img img{
     height: 100%;
+    transform: translateY(-56px);
 }
 
 .form__header-title{
-    transform: translateY(-70px);
+    transform: translateY(-65px);
     font-size: 1.8rem;
+    color: black;
 }
 
 .form__container{
@@ -540,7 +543,7 @@ body{
 }
 
 .form__container-passwordBox{
-    margin-top: 22px;
+    margin-top: 16px;
 }
 
 .form__container-input,
@@ -593,7 +596,6 @@ body{
 }
 
 .has-value{
-    /* border:2px solid var(--form-color); */
     box-shadow: none;
 }
 
@@ -601,7 +603,7 @@ body{
     width: 100%;
     display: flex;
     justify-content: space-between;
-    
+    margin:25px 0 25px;
 }
 
 .button-register,.button-login{
@@ -615,20 +617,60 @@ body{
     cursor: pointer;
 }
 
-.button-register{
-
+.button-register.btn--active{
+    background:var(--form-color);
+    color: white;
 }
 
-.button-login{
+.button-login.btn--active{
     background:var(--form-color);
     color: white;
 }
 
 .form__container-forget-password{
     font-size: 0.8rem;
-    margin: 10px 0 10px;
+    margin: 15px 0 25px;
     text-align: end;
     width: 100%;
     color: var(--form-color);
 }
 
+.form__container-socials{
+    display: flex;
+    font-size: 0.9rem;
+    justify-content: space-between;
+    width: 100%;
+    /* margin-top: 35px; */
+}
+
+.form__container-link-fb,
+.form__container-link-google{
+    text-decoration: none;
+    display: flex;
+    background-color: #0026ffcc;
+    color: white;
+    padding: 5px 12px;
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    width: 49%;
+}
+
+.socials-fb-title,
+.socials-google-title{
+    font-size: 0.65rem;
+    margin-left: 10px;
+}
+
+.form__container-link-google{
+    background-color: white;
+    /* color: var(--form-color);
+    border: 1px solid var(--form-color); */
+    color:#673AB7;
+    border: 1px solid #673AB7;
+}
+
+.form.form--active{
+    display: block;
+}
