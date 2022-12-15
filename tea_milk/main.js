@@ -92,8 +92,6 @@ for(let i=0; i < addCart.length; i++){
 addCart[i].onclick = () =>{
     numberProductInCart++;
 
-
-
 addCart[i].innerText = 'Added to cart';
 
 if(!addCart[i].classList.contains('add')){
@@ -157,13 +155,24 @@ console.log(listItem)
 }
 
 const navItem = document.querySelectorAll('.nav__item');
+const teaContainer = document.querySelector('.tea__container');
+const home = document.querySelector('.home');
     for(let i=0;i<navItem.length;i++){
         navItem[i].onclick = () =>{
             for(let j=0;j<navItem.length;j++){
             navItem[j].classList.remove('active');
         }
             navItem[i].classList.add('active');
-            if(i===2){
+            if(i===0){
+                home.style.display = 'flex';
+                teaContainer.style.display = 'none';
+                boxCart.style.display = 'none';
+            }
+            else if(i===1){
+                home.style.display = 'none';
+                teaContainer.style.display = 'flex';
+            }
+            else if(i===2){
                 boxCart.style.display = 'block';
             }
             else if(i===3){
@@ -171,6 +180,8 @@ const navItem = document.querySelectorAll('.nav__item');
                 modalForm.style.display ='flex';  
             }else{
                 boxCart.style.display = 'none';
+                teaContainer.style.display = 'none';
+                home.style.display = 'none';
             }
         }
         
@@ -203,6 +214,7 @@ for(let i=0;i<inputLogin.length;i++){
         }
     }
 }
+
 for(let i=0;i<passwordLogin.length;i++){
     passwordLogin[i].onchange = e =>{
         if(e.target.value !== ''){
