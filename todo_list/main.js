@@ -52,8 +52,6 @@ function init(){
     data.forEach(item =>{
         createItem(item)
     })
-
-    
 }
 
 init()

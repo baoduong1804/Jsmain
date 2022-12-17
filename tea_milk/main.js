@@ -77,81 +77,83 @@ iconCart.onclick = () =>{
 iconClose.onclick = () => {
     boxCart.style.display = 'none';
 }
-
-
-
 var addCart = document.querySelectorAll('.tea__item-add');
 let deleteBtn = document.querySelectorAll('.tea__item__added-delete');
 let listItem = [];
 let itemAdded = document.querySelectorAll('.tea__item__added');
-// for(let i=0; i < itemInCart.length; i++){
-//     itemInCart[i].style.display = 'flex';
-// }
+let cartNumber = document.querySelector('.tea__icon-cart-number');
+
 let numberProductInCart  = 0;
+
+function clickBtnItem(){
+
 for(let i=0; i < addCart.length; i++){
 addCart[i].onclick = () =>{
-    numberProductInCart++;
-
-addCart[i].innerText = 'Added to cart';
 
 if(!addCart[i].classList.contains('add')){
+    addCart[i].classList.add('add');
     let itemNew = addCart[i].parentElement.parentElement.cloneNode(true);
     cartContainer.appendChild(itemNew);
+    numberProductInCart++;
+    addCart[i].innerText = 'Added to cart';
+    let itemAddedInCart = document.querySelectorAll('.tea__cart-container .tea__item__added')[numberProductInCart-1];
+    let amountInput = itemAddedInCart.querySelector('.amount-input');
+    let amountMinus = itemAddedInCart.querySelector('.amount-minus');
+    let amountPlus = itemAddedInCart.querySelector('.amount-plus');
     
-}
-addCart[i].classList.add('add');
-let itemAddedInCart = document.querySelectorAll('.tea__cart-container .tea__item__added')[numberProductInCart-1];
-let amountInput = itemAddedInCart.querySelector('.amount-input');
-let amountMinus = itemAddedInCart.querySelector('.amount-minus');
-let amountPlus = itemAddedInCart.querySelector('.amount-plus');
-listItem.push({
-    id:numberProductInCart,
-    item:addCart[i].parentElement.parentElement,
-    itemInCart:itemAddedInCart.parentElement.parentElement,
-    deleteBtn:itemAddedInCart.parentElement.parentElement.querySelector('.tea__item__added-delete')  
-});
+    listItem.push({
+        id:numberProductInCart,
+        itemOutCart:addCart[i].parentElement.parentElement,
+        itemInCart:itemAddedInCart.parentElement.parentElement,
+        deleteBtn:itemAddedInCart.parentElement.parentElement.querySelector('.tea__item__added-delete')  
+    });
+    
+       itemAddedInCart.style.display = 'flex';
 
-   itemAddedInCart.style.display = 'flex';
 
-amountMinus.onclick = () =>{   
-    if(amountInput.value>1){
-        --amountInput.value;
+       boxList(listItem);
+
+
+    amountMinus.onclick = () =>{   
+        if(amountInput.value>1){
+            --amountInput.value;
+            
+        }
     }
-}
-    
-amountPlus.onclick = () =>{
-    ++amountInput.value;
-}
-
-amountInput.onchange = (e) =>{
-    console.log(e.target.value)
-}
-for(let j=0;j<numberProductInCart;j++){
-    listItem[j].deleteBtn.onclick = () =>{
-        listItem[j].itemInCart.remove();
-        listItem.splice(j,1)
-        numberProductInCart--;
-        console.log(listItem)
+        
+    amountPlus.onclick = () =>{
+        ++amountInput.value;
+        
     }
-}
-console.log(listItem)
-
-
-
-//     let deleteBtn = document.querySelectorAll('.tea__item__added-delete');
-//     let deleteBtnInCart = document.querySelectorAll('.tea__cart-container .tea__item__added-delete');
     
-//         for(let j=0; j < deleteBtn.length; j++){
-//             let deleteBtn = document.querySelectorAll('.tea__item__added-delete');
-//             let deleteBtnInCart = document.querySelectorAll('.tea__cart-container .tea__item__added-delete');
-//             console.log(deleteBtnInCart)
-//         deleteBtn[j].onclick = () =>{
-//             console.log(i)
-//             deleteBtn[i].parentElement.parentElement.querySelector('.add').classList.remove('add')
-//             deleteBtnInCart[i].parentElement.parentElement.parentElement.remove();
-//     }
-// }
+    amountInput.onchange = (e) =>{
+        console.log(e.target.value);
+        
+    }
+        cartNumber.innerText= listItem.length
+
+
+}else{
+    alert('Sản phẩm đã có trong giỏ hàng')
 }
+
+}
+}
+}
+
+clickBtnItem()
+
+function boxList(listItem){
+    listItem.filter((item,index) =>{
+        item.deleteBtn.onclick = () =>{
+            item.itemInCart.remove();
+            listItem.splice(listItem.indexOf(item),1)
+            console.log(listItem.length)
+            numberProductInCart--;
+            item.itemOutCart.querySelector('.tea__item-add').classList.remove('add');
+            cartNumber.innerText= listItem.length
+        }
+    })
 }
 
 const navItem = document.querySelectorAll('.nav__item');
