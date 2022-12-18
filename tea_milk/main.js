@@ -16,6 +16,7 @@ const loginBtn = document.querySelectorAll('.button-login');
 const formLogin = document.querySelector('.form--login');
 const formRegister = document.querySelector('.form--register');
 const priceAll = document.querySelector('.tea__cart-priceAll-price');
+const checkBoxAll = document.querySelector('.checkBox-checkAll');
 
 for(let i=0;i<2;i++){
     registerBtn[i].onclick = ()=>{
@@ -101,6 +102,8 @@ if(!addCart[i].classList.contains('add')){
     let amountInput = itemAddedInCart.querySelector('.amount-input');
     let amountMinus = itemAddedInCart.querySelector('.amount-minus');
     let amountPlus = itemAddedInCart.querySelector('.amount-plus');
+    let checkBoxItem = itemAddedInCart.querySelector('.tea__item__added-checkBox');
+    let checkBoxItem1 = document.querySelectorAll('.tea__cart-container .tea__item__added-checkBox');
     let priceItem = document.querySelectorAll('.tea__cart-container .tea__item')[numberProductInCart-1].querySelector('.tea__item-price span').innerText;
     
     // amountItem(amountMinus,amountPlus,amountInput,priceItem)
@@ -113,6 +116,7 @@ if(!addCart[i].classList.contains('add')){
         amountMinusBtn:amountMinus,
         amountPlusBtn:amountPlus,
         amountInputBtn:amountInput,
+        checkBoxItemBtn:checkBoxItem,
         priceBtn:priceItem,
         deleteBtn:itemAddedInCart.parentElement.parentElement.querySelector('.tea__item__added-delete')  
     });
@@ -133,13 +137,18 @@ if(!addCart[i].classList.contains('add')){
             
         amountPlus.onclick = () =>{
             ++amountInput.value;
-            // console.log(listItem.indexOf(item))
+        }
+
+        amountInput.onchange = (e) =>{
+           
+
+                priceAll.innerText ='$'+sumItem(listItem)
+            
         }
 
         listItem.forEach((item) =>{
             item.amountMinusBtn.onclick = () =>{   
                 if(item.amountInputBtn.value>1){
-                    // --amountInput.value; 
                     --item.amountInputBtn.value;
                     priceAll.innerText ='$'+sumItem(listItem)
                 }
@@ -147,10 +156,8 @@ if(!addCart[i].classList.contains('add')){
             }
                 
             item.amountPlusBtn.onclick = () =>{
-                // ++amountInput.value;
                 ++item.amountInputBtn.value
                 priceAll.innerText = '$'+sumItem(listItem)
-                // console.log(listItem.indexOf(item))
             }
             
             // amountInput.onchange = (e) =>{
@@ -158,6 +165,17 @@ if(!addCart[i].classList.contains('add')){
             // }
     
         })
+        checkBoxAll.onclick = (e)=>{
+            if(checkBoxAll.checked){
+                listItem.forEach((item) =>{
+                    item.checkBoxItemBtn.checked = true
+                 })
+            }else{
+                listItem.forEach((item) =>{
+                    item.checkBoxItemBtn.checked = false
+                 })
+            }
+        }
         priceAll.innerText ='$'+sumItem(listItem)
            
 
