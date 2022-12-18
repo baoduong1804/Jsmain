@@ -15,6 +15,7 @@ const registerBtn = document.querySelectorAll('.button-register');
 const loginBtn = document.querySelectorAll('.button-login');
 const formLogin = document.querySelector('.form--login');
 const formRegister = document.querySelector('.form--register');
+const priceAll = document.querySelector('.tea__cart-priceAll-price');
 
 for(let i=0;i<2;i++){
     registerBtn[i].onclick = ()=>{
@@ -81,8 +82,8 @@ var addCart = document.querySelectorAll('.tea__item-add');
 let deleteBtn = document.querySelectorAll('.tea__item__added-delete');
 let listItem = [];
 let itemAdded = document.querySelectorAll('.tea__item__added');
-let cartNumber = document.querySelector('.tea__icon-cart-number');
-
+let cartNumber = document.querySelectorAll('.tea__icon-cart-number');
+var result =0
 let numberProductInCart  = 0;
 
 function clickBtnItem(){
@@ -100,58 +101,106 @@ if(!addCart[i].classList.contains('add')){
     let amountInput = itemAddedInCart.querySelector('.amount-input');
     let amountMinus = itemAddedInCart.querySelector('.amount-minus');
     let amountPlus = itemAddedInCart.querySelector('.amount-plus');
+    let priceItem = document.querySelectorAll('.tea__cart-container .tea__item')[numberProductInCart-1].querySelector('.tea__item-price span').innerText;
+    
+    // amountItem(amountMinus,amountPlus,amountInput,priceItem)
     
     listItem.push({
         id:numberProductInCart,
         itemOutCart:addCart[i].parentElement.parentElement,
         itemInCart:itemAddedInCart.parentElement.parentElement,
+        amountItemInCart:priceItem,
+        amountMinusBtn:amountMinus,
+        amountPlusBtn:amountPlus,
+        amountInputBtn:amountInput,
+        priceBtn:priceItem,
         deleteBtn:itemAddedInCart.parentElement.parentElement.querySelector('.tea__item__added-delete')  
     });
     
-       itemAddedInCart.style.display = 'flex';
+        itemAddedInCart.style.display = 'flex';
 
 
-       boxList(listItem);
+        boxList(listItem,priceAll);
+        cartNumber[0].innerText= listItem.length
+        cartNumber[1].innerText= listItem.length
 
-
-    amountMinus.onclick = () =>{   
-        if(amountInput.value>1){
-            --amountInput.value;
+        amountMinus.onclick = () =>{   
+            if(amountInput.value>1){
+                --amountInput.value; 
+            }
             
         }
-    }
-        
-    amountPlus.onclick = () =>{
-        ++amountInput.value;
-        
-    }
-    
-    amountInput.onchange = (e) =>{
-        console.log(e.target.value);
-        
-    }
-        cartNumber.innerText= listItem.length
+            
+        amountPlus.onclick = () =>{
+            ++amountInput.value;
+            // console.log(listItem.indexOf(item))
+        }
 
+        listItem.forEach((item) =>{
+            item.amountMinusBtn.onclick = () =>{   
+                if(item.amountInputBtn.value>1){
+                    // --amountInput.value; 
+                    --item.amountInputBtn.value;
+                    priceAll.innerText ='$'+sumItem(listItem)
+                }
+                
+            }
+                
+            item.amountPlusBtn.onclick = () =>{
+                // ++amountInput.value;
+                ++item.amountInputBtn.value
+                priceAll.innerText = '$'+sumItem(listItem)
+                // console.log(listItem.indexOf(item))
+            }
+            
+            // amountInput.onchange = (e) =>{
+            //     console.log(e.target.value);
+            // }
+    
+        })
+        priceAll.innerText ='$'+sumItem(listItem)
+           
 
 }else{
-    alert('Sản phẩm đã có trong giỏ hàng')
+    alert('Sản phẩm đã có trong giỏ hàng');
 }
 
 }
 }
 }
+    
+function sumItem(listItem){
+    let result =0;
+    listItem.forEach((item)=>{
+        result+=Number(item.amountInputBtn.value)*item.priceBtn;
+    });  
+    return Math.round(result*100)/100
+}
+
 
 clickBtnItem()
 
-function boxList(listItem){
-    listItem.filter((item,index) =>{
+function getAmountInput(amountInput){
+    console.log(amountInput)
+}
+
+function amountItem(amountMinus,amountPlus,amountInput,priceItem){
+
+   
+
+}
+
+
+function boxList(listItem,priceAll){
+    listItem.forEach((item) =>{
         item.deleteBtn.onclick = () =>{
             item.itemInCart.remove();
             listItem.splice(listItem.indexOf(item),1)
-            console.log(listItem.length)
             numberProductInCart--;
             item.itemOutCart.querySelector('.tea__item-add').classList.remove('add');
-            cartNumber.innerText= listItem.length
+            cartNumber[0].innerText= listItem.length
+            cartNumber[1].innerText= listItem.length
+            priceAll.innerText = sumItem(listItem)!=0 ? '$'+sumItem(listItem): '$'+'0.00'
         }
     })
 }

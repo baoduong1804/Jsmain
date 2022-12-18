@@ -149,6 +149,7 @@ body{
     background-color: pink;
     margin-left: 12px;
 }
+
 .tea__item-add:hover{
     transition: 0.2s;
     background-color: rgb(238, 173, 220);
@@ -226,7 +227,7 @@ body{
 
 .tea__icon-cart{
     position:absolute;
-    top:0px;
+    top:20px;
     right:100px;
     background-color: rgba(255, 255, 255, 1);
     padding:5px 15px 5px;
@@ -451,6 +452,17 @@ body{
     border-radius: 3px;
     height: 35px;
     overflow: hidden;
+}
+
+.nav__item-cart{
+    position: relative;
+}
+
+.nav__icon-cart-number{
+    top:2px;
+    right:unset;
+    left:19px;
+    padding: 1px 4px 1px;
 }
 
 .nav__item:hover{
