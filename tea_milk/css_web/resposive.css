@@ -49,7 +49,7 @@
         border-radius: none;
         width: 100%;
         display: none;
-        animation: unset;
+        
         box-shadow:unset;
         transition: 0.5s;
     }

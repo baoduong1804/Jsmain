@@ -31,10 +31,14 @@
                     <i class="fa-solid fa-truck-fast"></i>
                     <span>Sản phẩm</span>
                 </li>
-                <li class="nav__item nav__item-cart">
-                    <i class="fa-solid fa-cart-shopping"></i>
+                <li class="nav__item">
+                    <div class="nav__item-cart fa-solid">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <div class="tea__icon-cart-number nav__icon-cart-number">0</div>
+                    </div>
+                    
                     <span>Giỏ hàng</span>
-                    <div class="tea__icon-cart-number nav__icon-cart-number">0</div>
+                    
                 </li>
                 <li class="nav__item nav__item-account">
                     <i class="fa-solid fa-user"></i>
@@ -874,17 +878,23 @@
                     <input type="password" id="password" class="form__container-password">
                     <label for="password" class="form__container-input-title">Mật khẩu</label>
                 </div>
-                <div class="form__container-forget-password">Quên mật khẩu?</div>
+                <div class="form__container-render-password">
+                    <div class="form__container-show-password">
+                        <input type="checkbox" name="" id="show-password" >
+                        <label for="show-password">Hiện mật khẩu</label>
+                    </div>
+                    <div class="form__container-forget-password">Quên mật khẩu?</div>
+                </div>
                 <div class="form__container-button">
                     <button class="button-register">Đăng ký</button>
                     <button class="button-login btn--active">Đăng nhập</button>
                 </div>
                 <div class="form__container-socials">
-                    <a href="#" class="form__container-link-fb">        
+                    <a href="https://www.facebook.com/" class="form__container-link-fb">        
                         <i class="fa-brands fa-facebook" class="socials-fb-icon"></i>
                         <div class="socials-fb-title">Kết nối Facebook</div>
                     </a>
-                    <a href="#" class="form__container-link-google">        
+                    <a href="https://www.google.com/" class="form__container-link-google">        
                         <i class="fa-brands fa-google" class="socials-google-icon"></i>
                         <div class="socials-google-title">Kết nối Google</div>
                     </a>

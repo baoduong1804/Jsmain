@@ -11,12 +11,23 @@ const modalForm = document.querySelector('.modal-form');
 const modal = document.querySelector('.modal');
 const inputLogin = document.querySelectorAll('.form__container-input');
 const passwordLogin = document.querySelectorAll('.form__container-password');
+const showPassword = document.querySelector('.form__container-show-password input');
 const registerBtn = document.querySelectorAll('.button-register');
 const loginBtn = document.querySelectorAll('.button-login');
 const formLogin = document.querySelector('.form--login');
 const formRegister = document.querySelector('.form--register');
 const priceAll = document.querySelector('.tea__cart-priceAll-price');
 const checkBoxAll = document.querySelector('.checkBox-checkAll');
+const addCart = document.querySelectorAll('.tea__item-add');
+const deleteBtn = document.querySelectorAll('.tea__item__added-delete');
+const itemAdded = document.querySelectorAll('.tea__item__added');
+const cartNumber = document.querySelectorAll('.tea__icon-cart-number');
+const amountStart = document.querySelectorAll('.amount-input');
+let listItem = [];
+let numberProductInCart  = 0;
+let thisPage = 1;
+const limit = 6;
+
 
 for(let i=0;i<2;i++){
     registerBtn[i].onclick = ()=>{
@@ -29,10 +40,7 @@ for(let i=0;i<2;i++){
     }
 }
 
-let thisPage = 1;
-const limit = 6;
 
-let amountStart = document.querySelectorAll('.amount-input');
 for(let i=0; i < amountStart.length; i++){
     amountStart[i].value = 1;
 }
@@ -79,13 +87,6 @@ iconCart.onclick = () =>{
 iconClose.onclick = () => {
     boxCart.style.display = 'none';
 }
-var addCart = document.querySelectorAll('.tea__item-add');
-let deleteBtn = document.querySelectorAll('.tea__item__added-delete');
-let listItem = [];
-let itemAdded = document.querySelectorAll('.tea__item__added');
-let cartNumber = document.querySelectorAll('.tea__icon-cart-number');
-var result =0
-let numberProductInCart  = 0;
 
 function clickBtnItem(){
 
@@ -93,90 +94,90 @@ for(let i=0; i < addCart.length; i++){
 addCart[i].onclick = () =>{
 
 if(!addCart[i].classList.contains('add')){
-    addCart[i].classList.add('add');
-    let itemNew = addCart[i].parentElement.parentElement.cloneNode(true);
+addCart[i].classList.add('add');
+let itemNew = addCart[i].parentElement.parentElement.cloneNode(true);
     cartContainer.appendChild(itemNew);
     numberProductInCart++;
     addCart[i].innerText = 'Added to cart';
-    let itemAddedInCart = document.querySelectorAll('.tea__cart-container .tea__item__added')[numberProductInCart-1];
-    let amountInput = itemAddedInCart.querySelector('.amount-input');
-    let amountMinus = itemAddedInCart.querySelector('.amount-minus');
-    let amountPlus = itemAddedInCart.querySelector('.amount-plus');
-    let checkBoxItem = itemAddedInCart.querySelector('.tea__item__added-checkBox');
-    let checkBoxItem1 = document.querySelectorAll('.tea__cart-container .tea__item__added-checkBox');
-    let priceItem = document.querySelectorAll('.tea__cart-container .tea__item')[numberProductInCart-1].querySelector('.tea__item-price span').innerText;
-    
-    // amountItem(amountMinus,amountPlus,amountInput,priceItem)
-    
-    listItem.push({
-        id:numberProductInCart,
-        itemOutCart:addCart[i].parentElement.parentElement,
-        itemInCart:itemAddedInCart.parentElement.parentElement,
-        amountItemInCart:priceItem,
-        amountMinusBtn:amountMinus,
-        amountPlusBtn:amountPlus,
-        amountInputBtn:amountInput,
-        checkBoxItemBtn:checkBoxItem,
-        priceBtn:priceItem,
-        deleteBtn:itemAddedInCart.parentElement.parentElement.querySelector('.tea__item__added-delete')  
-    });
-    
-        itemAddedInCart.style.display = 'flex';
+let itemAddedInCart = document.querySelectorAll('.tea__cart-container .tea__item__added')[numberProductInCart-1];
+let amountInput = itemAddedInCart.querySelector('.amount-input');
+let amountMinus = itemAddedInCart.querySelector('.amount-minus');
+let amountPlus = itemAddedInCart.querySelector('.amount-plus');
+let checkBoxItem = itemAddedInCart.querySelector('.tea__item__added-checkBox');
+let priceItem = document.querySelectorAll('.tea__cart-container .tea__item')[numberProductInCart-1].querySelector('.tea__item-price span').innerText;
 
 
-        boxList(listItem,priceAll);
-        cartNumber[0].innerText= listItem.length
-        cartNumber[1].innerText= listItem.length
+listItem.push({
+    id:numberProductInCart,
+    itemOutCart:addCart[i].parentElement.parentElement,
+    itemInCart:itemAddedInCart.parentElement.parentElement,
+    amountItemInCart:priceItem,
+    amountMinusBtn:amountMinus,
+    amountPlusBtn:amountPlus,
+    amountInputBtn:amountInput,
+    checkBoxItemBtn:checkBoxItem,
+    priceBtn:priceItem,
+    deleteBtn:itemAddedInCart.parentElement.parentElement.querySelector('.tea__item__added-delete')  
+});
 
-        amountMinus.onclick = () =>{   
-            if(amountInput.value>1){
-                --amountInput.value; 
+    itemAddedInCart.style.display = 'flex';
+
+    updateListItem(listItem,priceAll);
+    amountMinus.onclick = () =>{   
+        if(amountInput.value>1){
+            --amountInput.value; 
+        }
+    }
+        
+    amountPlus.onclick = () =>{
+        ++amountInput.value;
+    }
+
+    amountInput.onchange = (e) =>{
+        if(amountInput.value<1000 && amountInput.value>0){
+            totalPrice(listItem,priceAll)
+        }else{
+            amountInput.value=1;
+            totalPrice(listItem,priceAll);
+            alert('Giá trị nhập không hợp lệ hoặc quá số lượng')
+        }
+        
+    }
+
+    listItem.forEach((item) =>{
+        item.amountMinusBtn.onclick = () =>{   
+            if(item.amountInputBtn.value>1){
+                --item.amountInputBtn.value;
+                totalPrice(listItem,priceAll)
             }
             
         }
-            
-        amountPlus.onclick = () =>{
-            ++amountInput.value;
+        
+        item.amountPlusBtn.onclick = () =>{
+            ++item.amountInputBtn.value
+            totalPrice(listItem,priceAll)
         }
-
-        amountInput.onchange = (e) =>{
-           
-
-                priceAll.innerText ='$'+sumItem(listItem)
-            
+        
+        item.checkBoxItemBtn.onclick = () =>{
+            totalPrice(listItem,priceAll);
+        };
+        
+        
+    })
+    checkBoxAll.onclick = ()=>{
+        if(checkBoxAll.checked){
+            listItem.forEach((item) =>{
+                item.checkBoxItemBtn.checked = true;
+                })
+        }else{
+            listItem.forEach((item) =>{
+                item.checkBoxItemBtn.checked = false;
+                })
         }
-
-        listItem.forEach((item) =>{
-            item.amountMinusBtn.onclick = () =>{   
-                if(item.amountInputBtn.value>1){
-                    --item.amountInputBtn.value;
-                    priceAll.innerText ='$'+sumItem(listItem)
-                }
-                
-            }
-                
-            item.amountPlusBtn.onclick = () =>{
-                ++item.amountInputBtn.value
-                priceAll.innerText = '$'+sumItem(listItem)
-            }
-            
-            // amountInput.onchange = (e) =>{
-            //     console.log(e.target.value);
-            // }
+        totalPrice(listItem,priceAll)
+    }
     
-        })
-        checkBoxAll.onclick = (e)=>{
-            if(checkBoxAll.checked){
-                listItem.forEach((item) =>{
-                    item.checkBoxItemBtn.checked = true
-                 })
-            }else{
-                listItem.forEach((item) =>{
-                    item.checkBoxItemBtn.checked = false
-                 })
-            }
-        }
-        priceAll.innerText ='$'+sumItem(listItem)
+    totalPrice(listItem,priceAll)
            
 
 }else{
@@ -186,39 +187,51 @@ if(!addCart[i].classList.contains('add')){
 }
 }
 }
-    
-function sumItem(listItem){
-    let result =0;
-    listItem.forEach((item)=>{
-        result+=Number(item.amountInputBtn.value)*item.priceBtn;
-    });  
-    return Math.round(result*100)/100
+
+function checkItemInCart(listItem){
+    let checkItemAll = listItem.every((item)=>{
+        return item.checkBoxItemBtn.checked == true;
+    })
+    if(listItem.length==0){
+        checkBoxAll.checked = false;
+    }
+    else if(checkItemAll){
+        checkBoxAll.checked = true;
+    }else{
+        checkBoxAll.checked = false;
+    }
 }
 
+function totalCount(listItem){
+    let count = listItem.reduce((acc,item)=>{
+        return acc+Number(item.amountInputBtn.value)
+    },0)
+    return count
+}
+
+function totalPrice(listItem,priceAll){
+    let result =0;
+    listItem.forEach((item)=>{
+        if(item.checkBoxItemBtn.checked ==true){
+            result+=Number(item.amountInputBtn.value)*item.priceBtn;
+        }
+    });  
+    checkItemInCart(listItem);
+    cartNumber[0].innerText=  totalCount(listItem)
+    cartNumber[1].innerText=  totalCount(listItem)
+    priceAll.innerText =`$${result == 0 ?'0.00':Math.round(result*100)/100}`
+}
 
 clickBtnItem()
 
-function getAmountInput(amountInput){
-    console.log(amountInput)
-}
-
-function amountItem(amountMinus,amountPlus,amountInput,priceItem){
-
-   
-
-}
-
-
-function boxList(listItem,priceAll){
+function updateListItem(listItem,priceAll){
     listItem.forEach((item) =>{
         item.deleteBtn.onclick = () =>{
             item.itemInCart.remove();
             listItem.splice(listItem.indexOf(item),1)
             numberProductInCart--;
             item.itemOutCart.querySelector('.tea__item-add').classList.remove('add');
-            cartNumber[0].innerText= listItem.length
-            cartNumber[1].innerText= listItem.length
-            priceAll.innerText = sumItem(listItem)!=0 ? '$'+sumItem(listItem): '$'+'0.00'
+            totalPrice(listItem,priceAll)
         }
     })
 }
@@ -226,6 +239,8 @@ function boxList(listItem,priceAll){
 const navItem = document.querySelectorAll('.nav__item');
 const teaContainer = document.querySelector('.tea__container');
 const home = document.querySelector('.home');
+renderNav()
+function renderNav(){
     for(let i=0;i<navItem.length;i++){
         navItem[i].onclick = () =>{
             for(let j=0;j<navItem.length;j++){
@@ -255,45 +270,57 @@ const home = document.querySelector('.home');
         }
         
     }
-
-
-renderBtn.onclick = () =>{
-    if(navBar.classList.contains('open')){
-        navBar.classList.remove('open');
-        renderBtn.innerHTML = '<i class="fa-solid fa-arrow-right"></i>'
-        // renderBtn.style.transform = 'rotate(360deg)'
-    }else{
-        navBar.classList.add('open');
-        renderBtn.innerHTML = '<i class="fa-solid fa-arrow-left"></i>'
-        // renderBtn.style.transform = 'rotate(180deg)'
-    };
-}
-
-modal.onclick = ()=>{
-    modal.style.display = 'none'
-    modalForm.style.display ='none';
-}
-
-for(let i=0;i<inputLogin.length;i++){
-    inputLogin[i].onchange = e =>{
-        if(e.target.value.trim() !== ''){
-            inputLogin[i].classList.add('has-value')
+    renderBtn.onclick = () =>{
+        if(navBar.classList.contains('open')){
+            navBar.classList.remove('open');
+            renderBtn.innerHTML = '<i class="fa-solid fa-arrow-right"></i>'
+            // renderBtn.style.transform = 'rotate(360deg)'
         }else{
-            inputLogin[i].classList.remove('has-value')
-        }
+            navBar.classList.add('open');
+            renderBtn.innerHTML = '<i class="fa-solid fa-arrow-left"></i>'
+            // renderBtn.style.transform = 'rotate(180deg)'
+        };
+    }
+    
+    modal.onclick = ()=>{
+        modal.style.display = 'none'
+        modalForm.style.display ='none';
     }
 }
 
-for(let i=0;i<passwordLogin.length;i++){
-    passwordLogin[i].onchange = e =>{
-        if(e.target.value !== ''){
-            passwordLogin[i].classList.add('has-value')
-        }else{
-            passwordLogin[i].classList.remove('has-value')
+
+
+checkLogin()
+function checkLogin(){
+    for(let i=0;i<inputLogin.length;i++){
+        inputLogin[i].onchange = e =>{
+            if(e.target.value.trim() !== ''){
+                inputLogin[i].classList.add('has-value')
+            }else{
+                inputLogin[i].classList.remove('has-value')
+            }
         }
     }
+    
+    for(let i=0;i<passwordLogin.length;i++){
+        passwordLogin[i].onchange = e =>{
+            if(e.target.value !== ''){
+                passwordLogin[i].classList.add('has-value')
+            }else{
+                passwordLogin[i].classList.remove('has-value')
+            }
+        }
+        showPassword.onclick = ()=>{
+            if(showPassword.checked){
+                passwordLogin[0].setAttribute('type','text')
+            }else{
+                passwordLogin[0].setAttribute('type','password')
+            }
+        }
+    }
+    
+    
 }
-
 
 
 
