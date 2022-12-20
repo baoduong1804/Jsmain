@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    min-height: 100vh;
+}
+
+.tool{
+    background-color: aquamarine;
+    padding: 5px 100px;
+    display: flex;
+    align-items: center;
+    gap:10px;
+}
+
+.tool button{
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.save{
+    margin-left: auto;
+}
+
+.decrease{
+    font-size: 20px;
+}
+
+.canvas{
+    border:1px solid black;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+}

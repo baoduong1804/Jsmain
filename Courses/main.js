@@ -628,28 +628,3 @@ console.log([...new Set(array)])
 
 ///*Fn.bind() 
 // This trong method trước bind trỏ tới đối số đầu tiên của bind()
-l1 = [2,4,3]
-l2 = [5,6,4]
-const box1 = []
-const box2 = [];
-let sum1 = 0
-let sum2 = 0
-var addTwoNumbers = function(l1, l2) {
-    for(let i = l1.length-1; i>=0; i--){
-        box1.push(l1[i])
-    }
-    for(let i = l2.length-1; i>=0; i--){
-        box2.push(l2[i])
-    }
-    for(let i = box1.length-1; i>=0; i--){
-        sum1 +=box1[i]*Math.pow(10,box1.length-i-1)
-    }
-    for(let i = box2.length-1; i>=0; i--){
-        sum2 +=box2[i]*Math.pow(10,box2.length-i-1)
-    }
-    // for(let i = 0; i<l1.length; i++){
-        
-    // }
-    console.log(sum2)
-};
-addTwoNumbers(l1,l2)

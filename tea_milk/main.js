@@ -134,7 +134,7 @@ listItem.push({
     }
 
     amountInput.onchange = (e) =>{
-        if(amountInput.value<1000 && amountInput.value>0){
+        if(Number.isInteger(amountInput.value)<1000 && Number.isInteger(amountInput.value)>0){
             totalPrice(listItem,priceAll)
         }else{
             amountInput.value=1;

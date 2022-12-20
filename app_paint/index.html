@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App paint</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+    
+    <div class="tool">
+        <input type="color" name="" id="color">
+        <button class="eraser">
+            <i class="fa-solid fa-eraser"></i>
+        </button>
+        <button class="decrease">
+            -
+        </button>
+        <button class="size">
+            15
+        </button>
+        <button class="increase">
+            +
+        </button>
+        <a href="" download="tenfile2.png" class="save">
+        <button >
+            <i class="fa-solid fa-floppy-disk"></i>
+        </button>
+        </a>
+        <button class="clear">     
+                <i class="fa-solid fa-rectangle-xmark"></i>
+        </button>
+
+    </div>
+
+    <div class="container">
+        <canvas width="1000" height="500" class="canvas"></canvas>
+    </div>
+</div>
+</body>
+<script src="main.js"></script>
+</html>
