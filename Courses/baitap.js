@@ -77,3 +77,6 @@ var tong_val = myArray.reduce(function(accumulator,element){
    
 })
 console.log(tong_val)
+
+//4/4/42023
+console.log(123231)
